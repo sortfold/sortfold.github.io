@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Favorites Sorter – Sortfold</title>
 <meta name="description" content="Favorites Sorter: a browser extension to sort your saved videos like cards. Keep, remove, or file into a collection. Pro version 5 EUR, one-time payment.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Favorites Sorter - sort your saved videos in a few swipes">
+<meta property="og:description" content="Keep, remove or file each saved video with one swipe. Free up to 200 removals a day.">
+<meta property="og:image" content="https://sortfold.github.io/img/hero.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root { --bg:#fff; --fg:#1b1b1f; --mute:#5c5c66; --line:#e3e3ea; --acc:#6d4aff; --card:#f6f6fa; }
 @media (prefers-color-scheme: dark) { :root { --bg:#141418; --fg:#ececf1; --mute:#a0a0ad; --line:#2c2c34; --acc:#9a83ff; --card:#1d1d24; } }
@@ -20,8 +25,14 @@ h2 { font-size:1.3rem; margin:40px 0 8px; }
 h3 { font-size:1.05rem; margin:24px 0 4px; }
 p, li { color:var(--fg); }
 .mute { color:var(--mute); }
-.cta { display:inline-block; background:var(--acc); color:#fff; padding:10px 18px; border-radius:10px; text-decoration:none; font-weight:600; margin:8px 8px 8px 0; }
-.cta.alt { background:none; color:var(--fg); border:1px solid var(--line); }
+.cta { display:inline-block; background:linear-gradient(135deg,#ff2d75,#8a4dff); color:#fff; padding:13px 24px; border-radius:12px; text-decoration:none; font-weight:800; font-size:1.05rem; margin:8px 10px 8px 0; box-shadow:0 8px 24px #ff2d7544; transition:transform .15s, box-shadow .15s; }
+.cta:hover { transform:translateY(-2px); box-shadow:0 12px 30px #ff2d7566; }
+.cta.alt { background:none; color:var(--fg); border:2px solid var(--acc); box-shadow:none; font-weight:700; }
+.hero { width:100%; height:auto; border-radius:16px; border:1px solid var(--line); margin:12px 0 8px; display:block; }
+.shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin:14px 0; }
+.shots figure { margin:0; }
+.shots img { width:100%; height:auto; border-radius:12px; border:1px solid var(--line); display:block; }
+.shots figcaption { color:var(--mute); font-size:.92rem; margin-top:6px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
 .card b { display:block; margin-bottom:4px; }
@@ -30,6 +41,13 @@ th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertic
 a { color:var(--acc); }
 footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); color:var(--mute); font-size:.9rem; }
 .warn { border-left:4px solid #e0a100; background:var(--card); padding:10px 14px; border-radius:6px; }
+.lead { color:var(--mute); font-size:1.1rem; margin:0 0 18px; }
+.n { display:inline-grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--acc); color:#fff; font-weight:700; margin-bottom:8px; }
+.grid.two { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+.card ul { margin:6px 0 0; padding-left:20px; }
+.card.pro { border-color:var(--acc); }
+details.priv { margin-top:40px; border-top:1px solid var(--line); padding-top:14px; }
+details.priv summary { cursor:pointer; font-size:1.2rem; font-weight:700; }
 html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
 </style>
 </head>
@@ -42,37 +60,39 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 
 <!-- ============ ENGLISH ============ -->
 <div lang="en">
-<h1>Sort your saved videos like cards.</h1>
-<p>Favorites Sorter is a Chrome extension that turns your list of saved videos into a deck of cards. Swipe, and it does the rest.</p>
+<h1>Sort your saved videos in a few swipes.</h1>
+<p class="lead">Favorites Sorter turns your TikTok favorites into a deck of cards. Keep, remove or file each video with one swipe. Free up to 200 removals a day.</p>
 <p>
-  <a class="cta" href="https://sortfold.lemonsqueezy.com/checkout/buy/b981618b-b7be-4d10-bd0e-bce8455f8a55">Get Pro – €5, one-time</a>
-  <a class="cta alt" href="#privacy-en">Privacy policy</a>
-  <a class="cta alt" href="install.html">Manual install</a>
+  <a class="cta" href="install.html">⬇ Install it (2 min)</a>
+  <a class="cta alt" href="https://sortfold.lemonsqueezy.com/checkout/buy/b981618b-b7be-4d10-bd0e-bce8455f8a55">Get Pro – €5, one-time</a>
 </p>
+<img class="hero" src="img/hero.png" alt="Favorites Sorter: sort your saved videos in a few swipes (keep, remove, file into a collection)" width="1400" height="560">
 
+<h2>How it works</h2>
 <div class="grid">
-  <div class="card"><b>Left = keep</b>The video stays where it is.</div>
-  <div class="card"><b>Right = remove</b>It is removed from your favorites for you.</div>
-  <div class="card"><b>Up = collection</b>Drop it on a collection to file it.</div>
+  <div class="card"><span class="n">1</span><br><b>Import</b>One click reads your TikTok favorites. You can start sorting while it loads.</div>
+  <div class="card"><span class="n">2</span><br><b>Swipe</b>Left = keep · Right = remove from favorites · Up = file into a collection.</div>
+  <div class="card"><span class="n">3</span><br><b>Done</b>Removals and filing are sent to TikTok for you, in the background. You can undo for a few seconds.</div>
 </div>
 
-<h2>Free and Pro</h2>
-<table>
-  <tr><th></th><th>Free</th><th>Pro – €5 one-time</th></tr>
-  <tr><td>Removals per day</td><td>200</td><td>Unlimited</td></tr>
-  <tr><td>Parallel tabs</td><td>1</td><td>Up to 3, with media blocking for speed</td></tr>
-  <tr><td>Backup export / restore</td><td>–</td><td>Included</td></tr>
-  <tr><td>Sorting, collections, undo</td><td>Included</td><td>Included</td></tr>
-</table>
-<p class="mute">Pro is a one-time payment, not a subscription. Payment is handled by Lemon Squeezy, which sends you a license key by e-mail. Paste it in the extension, Settings → License.</p>
+<h2>See it</h2>
+<div class="shots">
+  <figure><img src="img/deck.png" alt="The deck of cards with your collections on the left" width="1280" height="800" loading="lazy"><figcaption>Swipe a video, or drop it on one of your collections.</figcaption></figure>
+  <figure><img src="img/status.png" alt="The status tab: removals in progress, collections, import, backup" width="1280" height="800" loading="lazy"><figcaption>Follow what is being removed and filed, and your import.</figcaption></figure>
+</div>
 
-<h2>Your data stays with you</h2>
-<p>Your favorites, collections and sorting choices are stored locally in your browser. No analytics, no trackers, no ads. The only network call the extension makes is the Pro license check.</p>
+<h2>Free or Pro</h2>
+<div class="grid two">
+  <div class="card"><b>Free</b><ul><li>200 removals per day</li><li>Sorting, collections, undo</li><li>1 background tab</li></ul></div>
+  <div class="card pro"><b>Pro – €5, one time</b><ul><li>Unlimited removals</li><li>Up to 3 tabs at once, faster</li><li>Backup and restore</li></ul></div>
+</div>
+<p class="mute">One payment, no subscription. A license key is e-mailed to you: paste it in the extension (Status tab).</p>
 
-<h2>Important: risk to your TikTok account</h2>
+<h2>Private and honest</h2>
+<p>Everything stays in your browser: no tracking, no ads. <a href="#privacy-en">Read the privacy policy</a>.</p>
 <p class="warn">The extension automates actions on your TikTok account, which may go against TikTok's terms of service. TikTok may limit, suspend or ban an account. You use it at your own risk. Favorites Sorter is an independent tool and is not affiliated with, endorsed by or sponsored by TikTok.</p>
 
-<h2 id="privacy-en">Privacy policy</h2>
+<details id="privacy-en" class="priv"><summary>Privacy policy</summary>
 <p class="mute">Last updated: September 19, 2026 · Publisher: Sortfold</p>
 <h3>In short</h3>
 <ul>
@@ -114,41 +134,44 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <p>Because the publisher does not collect your sorting data, there is nothing to request: you control it directly. For sales data (name, e-mail, invoice), reply to the receipt e-mail you received from Lemon Squeezy to request access, correction or deletion, subject to legal retention obligations (GDPR).</p>
 <h3>Changes</h3>
 <p>If this policy changes, the date above will be updated, and any new data transmission will be announced in the release notes before it is introduced.</p>
+</details>
 </div>
 
 <!-- ============ FRANÇAIS ============ -->
 <div lang="fr">
-<h1>Trie tes vidéos enregistrées comme des cartes.</h1>
-<p>Trieur de favoris est une extension Chrome qui transforme ta liste de vidéos enregistrées en paquet de cartes. Tu swipes, elle fait le reste.</p>
+<h1>Trie tes vidéos enregistrées en quelques swipes.</h1>
+<p class="lead">Trieur de favoris transforme tes favoris TikTok en paquet de cartes. Garde, retire ou range chaque vidéo d'un swipe. Gratuit jusqu'à 200 retraits par jour.</p>
 <p>
-  <a class="cta" href="https://sortfold.lemonsqueezy.com/checkout/buy/b981618b-b7be-4d10-bd0e-bce8455f8a55">Prendre le Pro – 5 €, paiement unique</a>
-  <a class="cta alt" href="#privacy-fr">Politique de confidentialité</a>
-  <a class="cta alt" href="install.html">Installation manuelle</a>
+  <a class="cta" href="install.html">⬇ L'installer (2 min)</a>
+  <a class="cta alt" href="https://sortfold.lemonsqueezy.com/checkout/buy/b981618b-b7be-4d10-bd0e-bce8455f8a55">Prendre le Pro – 5 €, une fois</a>
 </p>
+<img class="hero" src="img/hero.png" alt="Trieur de favoris : trie tes vidéos enregistrées en quelques swipes (garder, retirer, ranger dans une collection)" width="1400" height="560">
 
+<h2>Comment ça marche</h2>
 <div class="grid">
-  <div class="card"><b>Gauche = garder</b>La vidéo reste où elle est.</div>
-  <div class="card"><b>Droite = retirer</b>Elle est retirée de tes favoris à ta place.</div>
-  <div class="card"><b>Haut = collection</b>Dépose-la sur une collection pour la ranger.</div>
+  <div class="card"><span class="n">1</span><br><b>Importe</b>Un clic lit tes favoris TikTok. Tu peux commencer à trier pendant le chargement.</div>
+  <div class="card"><span class="n">2</span><br><b>Glisse</b>Gauche = garder · Droite = retirer des favoris · Haut = ranger dans une collection.</div>
+  <div class="card"><span class="n">3</span><br><b>C'est fait</b>Les retraits et les rangements partent à TikTok à ta place, en arrière-plan. Tu peux annuler pendant quelques secondes.</div>
 </div>
 
-<h2>Gratuit et Pro</h2>
-<table>
-  <tr><th></th><th>Gratuit</th><th>Pro – 5 € une fois</th></tr>
-  <tr><td>Retraits par jour</td><td>200</td><td>Illimité</td></tr>
-  <tr><td>Onglets en parallèle</td><td>1</td><td>Jusqu'à 3, avec blocage des médias pour aller plus vite</td></tr>
-  <tr><td>Export / restauration de sauvegarde</td><td>–</td><td>Inclus</td></tr>
-  <tr><td>Tri, collections, annulation</td><td>Inclus</td><td>Inclus</td></tr>
-</table>
-<p class="mute">Le Pro est un paiement unique, pas un abonnement. Le paiement est géré par Lemon Squeezy, qui t'envoie une clé de licence par e-mail. Colle-la dans l'extension, réglages → Licence.</p>
+<h2>Aperçu</h2>
+<div class="shots">
+  <figure><img src="img/deck.png" alt="Le paquet de cartes avec tes collections à gauche" width="1280" height="800" loading="lazy"><figcaption>Glisse une vidéo, ou dépose-la sur l'une de tes collections.</figcaption></figure>
+  <figure><img src="img/status.png" alt="L'onglet État : retraits en cours, collections, import, sauvegarde" width="1280" height="800" loading="lazy"><figcaption>Suis ce qui est retiré et rangé, et ton import.</figcaption></figure>
+</div>
 
-<h2>Tes données restent chez toi</h2>
-<p>Tes favoris, tes collections et tes choix de tri sont stockés localement dans ton navigateur. Aucune statistique, aucun traceur, aucune publicité. Le seul échange réseau de l'extension est la vérification de la licence Pro.</p>
+<h2>Gratuit ou Pro</h2>
+<div class="grid two">
+  <div class="card"><b>Gratuit</b><ul><li>200 retraits par jour</li><li>Tri, collections, annulation</li><li>1 onglet en arrière-plan</li></ul></div>
+  <div class="card pro"><b>Pro – 5 €, une fois</b><ul><li>Retraits illimités</li><li>Jusqu'à 3 onglets en même temps, plus rapide</li><li>Sauvegarde et restauration</li></ul></div>
+</div>
+<p class="mute">Un seul paiement, sans abonnement. Une clé de licence t'est envoyée par e-mail : colle-la dans l'extension (onglet État).</p>
 
-<h2>Important : risque pour ton compte TikTok</h2>
+<h2>Privé et honnête</h2>
+<p>Tout reste dans ton navigateur : aucun traceur, aucune publicité. <a href="#privacy-fr">Lire la politique de confidentialité</a>.</p>
 <p class="warn">L'extension automatise des actions sur ton compte TikTok, ce qui peut aller à l'encontre des conditions d'utilisation de TikTok. TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Trieur de favoris est un outil indépendant, non affilié à TikTok, ni approuvé ni sponsorisé par TikTok.</p>
 
-<h2 id="privacy-fr">Politique de confidentialité</h2>
+<details id="privacy-fr" class="priv"><summary>Politique de confidentialité</summary>
 <p class="mute">Dernière mise à jour : 19 septembre 2026 · Éditeur : Sortfold</p>
 <h3>En bref</h3>
 <ul>
@@ -190,6 +213,7 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <p>Comme l'éditeur ne collecte pas tes données de tri, il n'y a rien à demander : tu les contrôles directement. Pour les données de vente (nom, e-mail, facture), réponds à l'e-mail de reçu envoyé par Lemon Squeezy pour demander un accès, une correction ou une suppression, dans la limite des obligations légales de conservation (RGPD).</p>
 <h3>Modifications</h3>
 <p>Si cette politique change, la date ci-dessus sera mise à jour, et tout nouvel envoi de données sera annoncé dans les notes de version avant d'être mis en place.</p>
+</details>
 </div>
 
 <footer>
@@ -209,6 +233,12 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
   var hash = location.hash.slice(-2);
   set(hash === 'fr' || hash === 'en' ? hash : saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
   btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+  function openPriv() {
+    var d = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); }
+  }
+  openPriv();
+  window.addEventListener('hashchange', openPriv);
 })();
 </script>
 </body>
