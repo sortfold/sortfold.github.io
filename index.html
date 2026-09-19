@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Favorites Sorter – Sortfold</title>
+<meta name="description" content="Favorites Sorter: a browser extension to sort your saved videos like cards. Keep, remove, or file into a collection. Pro version 5 EUR, one-time payment.">
+<style>
+:root { --bg:#fff; --fg:#1b1b1f; --mute:#5c5c66; --line:#e3e3ea; --acc:#6d4aff; --card:#f6f6fa; }
+@media (prefers-color-scheme: dark) { :root { --bg:#141418; --fg:#ececf1; --mute:#a0a0ad; --line:#2c2c34; --acc:#9a83ff; --card:#1d1d24; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
+header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0 24px; }
+.brand { font-weight:700; }
+.lang button { background:none; border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 10px; cursor:pointer; font:inherit; }
+.lang button[aria-pressed="true"] { background:var(--acc); color:#fff; border-color:var(--acc); }
+h1 { font-size:2rem; line-height:1.2; margin:8px 0 12px; }
+h2 { font-size:1.3rem; margin:40px 0 8px; }
+h3 { font-size:1.05rem; margin:24px 0 4px; }
+p, li { color:var(--fg); }
+.mute { color:var(--mute); }
+.cta { display:inline-block; background:var(--acc); color:#fff; padding:10px 18px; border-radius:10px; text-decoration:none; font-weight:600; margin:8px 8px 8px 0; }
+.cta.alt { background:none; color:var(--fg); border:1px solid var(--line); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+.card b { display:block; margin-bottom:4px; }
+table { border-collapse:collapse; width:100%; margin:12px 0; }
+th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+a { color:var(--acc); }
+footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); color:var(--mute); font-size:.9rem; }
+.warn { border-left:4px solid #e0a100; background:var(--card); padding:10px 14px; border-radius:6px; }
+html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <span class="brand">Favorites Sorter</span>
+  <span class="lang"><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+</header>
+
+<!-- ============ ENGLISH ============ -->
+<div lang="en">
+<h1>Sort your saved videos like cards.</h1>
+<p>Favorites Sorter is a Chrome extension that turns your list of saved videos into a deck of cards. Swipe, and it does the rest.</p>
+<p>
+  <a class="cta" href="https://sortfold.lemonsqueezy.com/checkout/buy/b981618b-b7be-4d10-bd0e-bce8455f8a55">Get Pro – €5, one-time</a>
+  <a class="cta alt" href="#privacy-en">Privacy policy</a>
+</p>
+
+<div class="grid">
+  <div class="card"><b>Left = keep</b>The video stays where it is.</div>
+  <div class="card"><b>Right = remove</b>It is removed from your favorites for you.</div>
+  <div class="card"><b>Up = collection</b>Drop it on a collection to file it.</div>
+</div>
+
+<h2>Free and Pro</h2>
+<table>
+  <tr><th></th><th>Free</th><th>Pro – €5 one-time</th></tr>
+  <tr><td>Removals per day</td><td>200</td><td>Unlimited</td></tr>
+  <tr><td>Parallel tabs</td><td>1</td><td>Up to 3, with media blocking for speed</td></tr>
+  <tr><td>Backup export / restore</td><td>–</td><td>Included</td></tr>
+  <tr><td>Sorting, collections, undo</td><td>Included</td><td>Included</td></tr>
+</table>
+<p class="mute">Pro is a one-time payment, not a subscription. Payment is handled by Lemon Squeezy, which sends you a license key by e-mail. Paste it in the extension, Settings → License.</p>
+
+<h2>Your data stays with you</h2>
+<p>Your favorites, collections and sorting choices are stored locally in your browser. No analytics, no trackers, no ads. The only network call the extension makes is the Pro license check.</p>
+
+<h2>Important: risk to your TikTok account</h2>
+<p class="warn">The extension automates actions on your TikTok account, which may go against TikTok's terms of service. TikTok may limit, suspend or ban an account. You use it at your own risk. Favorites Sorter is an independent tool and is not affiliated with, endorsed by or sponsored by TikTok.</p>
+
+<h2 id="privacy-en">Privacy policy</h2>
+<p class="mute">Last updated: September 19, 2026 · Publisher: Sortfold</p>
+<h3>In short</h3>
+<ul>
+  <li>Your favorites, collections, sorting choices and settings <b>stay on your computer</b>. The publisher has no access to them.</li>
+  <li>The extension contains <b>no analytics, trackers, ads or cookies</b>.</li>
+  <li>The only communication with a server is the Pro license check with Lemon Squeezy, and only if you use a license.</li>
+  <li>The extension is not affiliated with TikTok.</li>
+</ul>
+<h3>What the extension reads</h3>
+<p>On <code>tiktok.com</code> pages, the extension reads what is displayed (your favorites list, collections, video IDs, the signed-in account name) to build your deck of cards. It also clicks TikTok's buttons on your behalf (remove from favorites, add to a collection). None of this information is sent to anyone.</p>
+<h3>What is stored, and where</h3>
+<p>Everything is kept in the extension's local storage in your browser:</p>
+<table>
+  <tr><th>Data</th><th>Purpose</th></tr>
+  <tr><td>Your video list, sorting decisions, collections, action log (per TikTok account)</td><td>Make sorting and undo work</td></tr>
+  <tr><td>Settings (delays, number of tabs, risk-warning acceptance)</td><td>Your preferences</td></tr>
+  <tr><td>Today's removal counter</td><td>Enforce the free plan limit</td></tr>
+  <tr><td>License key and activation ID (Pro only)</td><td>Unlock Pro</td></tr>
+  <tr><td>Pending removal queue</td><td>Resume after a page is closed</td></tr>
+</table>
+<p>This data never leaves your browser. The extension's "Reset everything" button erases it; uninstalling the extension removes it too. The backup export (Pro) creates a file on your disk, which you manage yourself.</p>
+<h3>The only network call: the Pro license</h3>
+<p>If you enter a license key, the extension contacts <code>api.lemonsqueezy.com</code> to activate it, then re-checks it about every 7 days. Sent: the key, an instance name (your browser version) and the activation ID. Lemon Squeezy replies with the license status and the e-mail address tied to the purchase, which the extension shows in its settings. Lemon Squeezy processes this data under its own policy: <a href="https://www.lemonsqueezy.com/privacy">lemonsqueezy.com/privacy</a>.</p>
+<h3>Payment</h3>
+<p>Payment for Pro is handled entirely by <b>Lemon Squeezy</b>, which acts as the merchant of record. The publisher never sees or stores your card details, and may receive your name, e-mail and the billing information needed for the sale.</p>
+<h3>Permissions requested</h3>
+<ul>
+  <li><code>tiktok.com</code>: read and drive TikTok's interface to sort your favorites.</li>
+  <li><code>api.lemonsqueezy.com</code>: verify the Pro license.</li>
+  <li><code>storage</code>, <code>unlimitedStorage</code>: keep your data locally (thousands of favorites).</li>
+  <li><code>tabs</code>: open and close the worker tabs that remove videos.</li>
+  <li><code>alarms</code>: resume the queue after a pause.</li>
+  <li><code>declarativeNetRequest</code>: block images and video in worker tabs for speed.</li>
+</ul>
+<p>No code is loaded from the Internet.</p>
+<h3>Children</h3>
+<p>The extension is not intended for anyone below the minimum age to use TikTok.</p>
+<h3>Your rights and contact</h3>
+<p>Because the publisher does not collect your sorting data, there is nothing to request: you control it directly. For sales data (name, e-mail, invoice), reply to the receipt e-mail you received from Lemon Squeezy to request access, correction or deletion, subject to legal retention obligations (GDPR).</p>
+<h3>Changes</h3>
+<p>If this policy changes, the date above will be updated, and any new data transmission will be announced in the release notes before it is introduced.</p>
+</div>
+
+<!-- ============ FRANÇAIS ============ -->
+<div lang="fr">
+<h1>Trie tes vidéos enregistrées comme des cartes.</h1>
+<p>Trieur de favoris est une extension Chrome qui transforme ta liste de vidéos enregistrées en paquet de cartes. Tu swipes, elle fait le reste.</p>
+<p>
+  <a class="cta" href="https://sortfold.lemonsqueezy.com/checkout/buy/b981618b-b7be-4d10-bd0e-bce8455f8a55">Prendre le Pro – 5 €, paiement unique</a>
+  <a class="cta alt" href="#privacy-fr">Politique de confidentialité</a>
+</p>
+
+<div class="grid">
+  <div class="card"><b>Gauche = garder</b>La vidéo reste où elle est.</div>
+  <div class="card"><b>Droite = retirer</b>Elle est retirée de tes favoris à ta place.</div>
+  <div class="card"><b>Haut = collection</b>Dépose-la sur une collection pour la ranger.</div>
+</div>
+
+<h2>Gratuit et Pro</h2>
+<table>
+  <tr><th></th><th>Gratuit</th><th>Pro – 5 € une fois</th></tr>
+  <tr><td>Retraits par jour</td><td>200</td><td>Illimité</td></tr>
+  <tr><td>Onglets en parallèle</td><td>1</td><td>Jusqu'à 3, avec blocage des médias pour aller plus vite</td></tr>
+  <tr><td>Export / restauration de sauvegarde</td><td>–</td><td>Inclus</td></tr>
+  <tr><td>Tri, collections, annulation</td><td>Inclus</td><td>Inclus</td></tr>
+</table>
+<p class="mute">Le Pro est un paiement unique, pas un abonnement. Le paiement est géré par Lemon Squeezy, qui t'envoie une clé de licence par e-mail. Colle-la dans l'extension, réglages → Licence.</p>
+
+<h2>Tes données restent chez toi</h2>
+<p>Tes favoris, tes collections et tes choix de tri sont stockés localement dans ton navigateur. Aucune statistique, aucun traceur, aucune publicité. Le seul échange réseau de l'extension est la vérification de la licence Pro.</p>
+
+<h2>Important : risque pour ton compte TikTok</h2>
+<p class="warn">L'extension automatise des actions sur ton compte TikTok, ce qui peut aller à l'encontre des conditions d'utilisation de TikTok. TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Trieur de favoris est un outil indépendant, non affilié à TikTok, ni approuvé ni sponsorisé par TikTok.</p>
+
+<h2 id="privacy-fr">Politique de confidentialité</h2>
+<p class="mute">Dernière mise à jour : 19 septembre 2026 · Éditeur : Sortfold</p>
+<h3>En bref</h3>
+<ul>
+  <li>Tes favoris, tes collections, tes choix de tri et tes réglages <b>restent sur ton ordinateur</b>. L'éditeur n'y a pas accès.</li>
+  <li>Il n'y a <b>ni statistiques, ni traceurs, ni publicité, ni cookies</b> dans l'extension.</li>
+  <li>La seule communication avec un serveur est la vérification de la clé de licence Pro auprès de Lemon Squeezy, et uniquement si tu utilises une licence.</li>
+  <li>L'extension n'est pas affiliée à TikTok.</li>
+</ul>
+<h3>Ce que l'extension lit</h3>
+<p>Sur les pages <code>tiktok.com</code>, l'extension lit le contenu affiché (liste de tes favoris, tes collections, identifiants de vidéos, nom du compte connecté) pour construire ton paquet de cartes. Elle clique aussi sur les boutons de TikTok à ta place (retirer des favoris, ajouter à une collection). Ces informations ne sont envoyées à personne.</p>
+<h3>Ce qui est enregistré, et où</h3>
+<p>Tout est stocké dans l'espace de stockage local de l'extension dans ton navigateur :</p>
+<table>
+  <tr><th>Donnée</th><th>Utilité</th></tr>
+  <tr><td>Liste de tes vidéos, décisions de tri, collections, journal des actions (par compte TikTok)</td><td>Faire fonctionner le tri et l'annulation</td></tr>
+  <tr><td>Réglages (délais, nombre d'onglets, acceptation de l'avertissement de risque)</td><td>Ton confort d'utilisation</td></tr>
+  <tr><td>Compteur de retraits du jour</td><td>Appliquer la limite de la version gratuite</td></tr>
+  <tr><td>Clé de licence et identifiant d'activation (si Pro)</td><td>Débloquer la version Pro</td></tr>
+  <tr><td>File des retraits en cours</td><td>Reprendre après une fermeture de page</td></tr>
+</table>
+<p>Ces données ne quittent pas ton navigateur. Le bouton « Tout réinitialiser » de l'extension les efface ; désinstaller l'extension les supprime aussi. L'export de sauvegarde (Pro) crée un fichier sur ton disque, que tu gères toi-même.</p>
+<h3>Le seul échange réseau : la licence Pro</h3>
+<p>Si tu saisis une clé de licence, l'extension contacte <code>api.lemonsqueezy.com</code> pour l'activer, puis la revérifie environ tous les 7 jours. Sont envoyés : la clé, un nom d'instance (la version de ton navigateur) et l'identifiant d'activation. Lemon Squeezy répond avec l'état de la licence et l'adresse e-mail liée à l'achat, que l'extension affiche dans ses réglages. Lemon Squeezy traite ces données selon sa propre politique : <a href="https://www.lemonsqueezy.com/privacy">lemonsqueezy.com/privacy</a>.</p>
+<h3>Paiement</h3>
+<p>Le paiement de la version Pro est géré entièrement par <b>Lemon Squeezy</b>, qui agit comme vendeur (« merchant of record »). L'éditeur ne voit ni ne conserve tes coordonnées bancaires ; il peut recevoir ton nom, ton adresse e-mail et les informations de facturation nécessaires à la vente.</p>
+<h3>Permissions demandées</h3>
+<ul>
+  <li><code>tiktok.com</code> : lire et piloter l'interface de TikTok pour trier tes favoris.</li>
+  <li><code>api.lemonsqueezy.com</code> : vérifier la licence Pro.</li>
+  <li><code>storage</code>, <code>unlimitedStorage</code> : conserver tes données localement (plusieurs milliers de favoris).</li>
+  <li><code>tabs</code> : ouvrir et fermer les onglets de travail qui retirent les vidéos.</li>
+  <li><code>alarms</code> : reprendre la file après une pause.</li>
+  <li><code>declarativeNetRequest</code> : bloquer images et vidéos dans les onglets de travail pour aller plus vite.</li>
+</ul>
+<p>Aucun code n'est chargé depuis Internet.</p>
+<h3>Enfants</h3>
+<p>L'extension n'est pas destinée aux personnes n'ayant pas l'âge requis pour utiliser TikTok.</p>
+<h3>Tes droits et contact</h3>
+<p>Comme l'éditeur ne collecte pas tes données de tri, il n'y a rien à demander : tu les contrôles directement. Pour les données de vente (nom, e-mail, facture), réponds à l'e-mail de reçu envoyé par Lemon Squeezy pour demander un accès, une correction ou une suppression, dans la limite des obligations légales de conservation (RGPD).</p>
+<h3>Modifications</h3>
+<p>Si cette politique change, la date ci-dessus sera mise à jour, et tout nouvel envoi de données sera annoncé dans les notes de version avant d'être mis en place.</p>
+</div>
+
+<footer>
+  <span lang="en">© 2026 Sortfold. Favorites Sorter is not affiliated with TikTok.</span>
+  <span lang="fr">© 2026 Sortfold. Trieur de favoris n'est pas affilié à TikTok.</span>
+</footer>
+</main>
+<script>
+(function () {
+  var root = document.documentElement, btns = document.querySelectorAll('.lang button');
+  function set(l) {
+    root.setAttribute('data-lang', l); root.lang = l;
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var hash = location.hash.slice(-2);
+  set(hash === 'fr' || hash === 'en' ? hash : saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+})();
+</script>
+</body>
+</html>
