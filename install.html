@@ -4,6 +4,133 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install Favorites Sorter – Sortfold</title>
+<meta name="description" content="Install Favorites Sorter in Chrome in 2 minutes, step by step. Installer Trieur de favoris dans Chrome en 2 minutes.">
+<style>
+:root { --bg:#fff; --fg:#1b1b1f; --mute:#5c5c66; --line:#e3e3ea; --acc:#6d4aff; --card:#f6f6fa; }
+@media (prefers-color-scheme: dark) { :root { --bg:#141418; --fg:#ececf1; --mute:#a0a0ad; --line:#2c2c34; --acc:#9a83ff; --card:#1d1d24; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:720px; margin:0 auto; padding:24px 16px 64px; }
+header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0 20px; }
+.brand { font-weight:700; text-decoration:none; color:inherit; }
+.lang button { background:none; border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 10px; cursor:pointer; font:inherit; }
+.lang button[aria-pressed="true"] { background:var(--acc); color:#fff; border-color:var(--acc); }
+h1 { font-size:2rem; line-height:1.2; margin:8px 0 8px; }
+h2 { font-size:1.25rem; margin:40px 0 10px; }
+.lead { color:var(--mute); margin:0 0 20px; }
+.cta { display:inline-block; background:var(--acc); color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:700; }
+.steps { list-style:none; counter-reset:s; padding:0; margin:20px 0; }
+.steps li { counter-increment:s; position:relative; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px 14px 62px; margin:12px 0; }
+.steps li::before { content:counter(s); position:absolute; left:16px; top:14px; width:34px; height:34px; border-radius:50%; background:var(--acc); color:#fff; font-weight:700; display:grid; place-items:center; }
+.steps b { display:block; margin-bottom:2px; }
+.steps span { color:var(--mute); font-size:.95rem; }
+code, kbd { background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:1px 7px; font-size:.92em; }
+.faq p { margin:4px 0 16px; }
+.faq b { display:block; }
+.warn { border-left:4px solid #e0a100; background:var(--card); padding:10px 14px; border-radius:6px; font-size:.95rem; }
+a { color:var(--acc); }
+footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); color:var(--mute); font-size:.9rem; }
+html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="brand" href="./">Favorites Sorter</a>
+  <span class="lang"><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+</header>
+
+<!-- ============ ENGLISH ============ -->
+<div lang="en">
+<h1>Install Favorites Sorter</h1>
+<p class="lead">Takes about 2 minutes. Works in Chrome, Edge and Brave on a computer.</p>
+<p><a class="cta" href="favorites-sorter.zip" download>⬇ Download (.zip)</a></p>
+
+<ol class="steps">
+  <li><b>Unzip the file you just downloaded.</b><span>Right-click it → <i>Extract all</i>. Put the new folder somewhere you will keep it, for example in <i>Documents</i>. Do not delete it later: the browser runs the extension from this folder.</span></li>
+  <li><b>Open the extensions page.</b><span>In the address bar of Chrome, type <code>chrome://extensions</code> and press Enter. (Edge: <code>edge://extensions</code>.)</span></li>
+  <li><b>Turn on “Developer mode”.</b><span>It is a switch at the top right of that page.</span></li>
+  <li><b>Click “Load unpacked”</b><span>and choose the unzipped folder, the one that contains a file called <code>manifest.json</code>. Favorites Sorter now appears in your list.</span></li>
+  <li><b>Open TikTok.</b><span>Go to <code>tiktok.com</code> and sign in. A red button <b style="display:inline">⇄ Sort my favorites</b> appears at the bottom right. Click it, then <i>Import from my TikTok profile</i>.</span></li>
+</ol>
+
+<h2>Good to know</h2>
+<ul>
+  <li><b>Settings:</b> the <b>⚙ Settings</b> button at the top of the panel. Language, swipe direction and speed are there.</li>
+  <li><b>Language:</b> the panel follows the language of TikTok. Use the <b>EN / FR</b> button at the top right of the panel to switch.</li>
+  <li><b>Free plan:</b> 200 removals per day. <b>Pro:</b> unlimited, one-time payment, on the <a href="./">home page</a>. After buying, paste your key in the panel: <i>Status</i> tab → <i>License key</i>.</li>
+  <li><b>Chrome may show a warning at startup</b> about extensions in developer mode. This is normal for a manual install: just close it.</li>
+</ul>
+
+<h2>It does not work?</h2>
+<div class="faq">
+  <p><b>“Manifest file is missing or unreadable”</b>You picked the wrong folder. Choose the folder that directly contains <code>manifest.json</code> (not the .zip, and not a folder inside a folder).</p>
+  <p><b>I do not see the red button on TikTok.</b>Reload the TikTok page (<kbd>F5</kbd>). Check on <code>chrome://extensions</code> that Favorites Sorter is switched on.</p>
+  <p><b>The panel says I am not signed in.</b>Sign in to TikTok first, then open your own profile once.</p>
+  <p><b>How do I update?</b>Download the new .zip, unzip it over the same folder (replace the files), then on <code>chrome://extensions</code> click the round arrow ↻ on the Favorites Sorter card and reload TikTok. Your data is kept.</p>
+  <p><b>How do I remove it?</b>On <code>chrome://extensions</code>, click <i>Remove</i>. Your sorting data is deleted with it.</p>
+</div>
+
+<p class="warn">Favorites Sorter clicks on TikTok for you. This may go against TikTok's terms of service: TikTok may limit, suspend or ban an account. Use it at your own risk. Not affiliated with TikTok.</p>
+</div>
+
+<!-- ============ FRANÇAIS ============ -->
+<div lang="fr">
+<h1>Installer Trieur de favoris</h1>
+<p class="lead">Environ 2 minutes. Fonctionne sur ordinateur avec Chrome, Edge et Brave.</p>
+<p><a class="cta" href="favorites-sorter.zip" download>⬇ Télécharger (.zip)</a></p>
+
+<ol class="steps">
+  <li><b>Décompresse le fichier téléchargé.</b><span>Clic droit dessus → <i>Extraire tout</i>. Mets le nouveau dossier à un endroit où il restera, par exemple dans <i>Documents</i>. Ne le supprime pas ensuite : le navigateur fait tourner l'extension depuis ce dossier.</span></li>
+  <li><b>Ouvre la page des extensions.</b><span>Dans la barre d'adresse de Chrome, tape <code>chrome://extensions</code> puis Entrée. (Edge : <code>edge://extensions</code>.)</span></li>
+  <li><b>Active le « Mode développeur ».</b><span>C'est un interrupteur en haut à droite de cette page.</span></li>
+  <li><b>Clique sur « Charger l'extension non empaquetée »</b><span>et choisis le dossier décompressé, celui qui contient un fichier <code>manifest.json</code>. Trieur de favoris apparaît alors dans ta liste.</span></li>
+  <li><b>Ouvre TikTok.</b><span>Va sur <code>tiktok.com</code> et connecte-toi. Un bouton rouge <b style="display:inline">⇄ Trier mes favoris</b> apparaît en bas à droite. Clique dessus, puis sur <i>Importer depuis mon profil TikTok</i>.</span></li>
+</ol>
+
+<h2>Bon à savoir</h2>
+<ul>
+  <li><b>Réglages :</b> le bouton <b>⚙ Réglages</b> en haut du panneau. La langue, le sens des gestes et la vitesse y sont.</li>
+  <li><b>Langue :</b> le panneau suit la langue de TikTok. Le bouton <b>EN / FR</b> en haut à droite du panneau permet d'en changer.</li>
+  <li><b>Version gratuite :</b> 200 retraits par jour. <b>Pro :</b> illimité, paiement unique, sur la <a href="./">page d'accueil</a>. Après l'achat, colle ta clé dans le panneau : onglet <i>État</i> → <i>Clé de licence</i>.</li>
+  <li><b>Chrome peut afficher un avertissement au démarrage</b> sur les extensions en mode développeur. C'est normal pour une installation manuelle : ferme-le simplement.</li>
+</ul>
+
+<h2>Ça ne marche pas ?</h2>
+<div class="faq">
+  <p><b>« Le fichier manifeste est manquant ou illisible »</b>Tu as choisi le mauvais dossier. Choisis celui qui contient directement <code>manifest.json</code> (pas le .zip, ni un dossier dans un dossier).</p>
+  <p><b>Je ne vois pas le bouton rouge sur TikTok.</b>Recharge la page TikTok (<kbd>F5</kbd>). Vérifie sur <code>chrome://extensions</code> que Trieur de favoris est activé.</p>
+  <p><b>Le panneau dit que je ne suis pas connecté.</b>Connecte-toi d'abord à TikTok, puis ouvre une fois ton propre profil.</p>
+  <p><b>Comment mettre à jour ?</b>Télécharge le nouveau .zip, décompresse-le dans le même dossier (remplace les fichiers), puis sur <code>chrome://extensions</code> clique sur la flèche ronde ↻ de la carte Trieur de favoris et recharge TikTok. Tes données sont conservées.</p>
+  <p><b>Comment le supprimer ?</b>Sur <code>chrome://extensions</code>, clique sur <i>Supprimer</i>. Ton tri est supprimé avec.</p>
+</div>
+
+<p class="warn">Trieur de favoris clique sur TikTok à ta place. Cela peut aller à l'encontre des conditions d'utilisation de TikTok : TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Non affilié à TikTok.</p>
+</div>
+
+<footer>© 2026 Sortfold</footer>
+</main>
+<script>
+(function () {
+  var root = document.documentElement, btns = document.querySelectorAll('.lang button');
+  function set(l) {
+    root.setAttribute('data-lang', l); root.lang = l;
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  set(saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+})();
+</script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Favorites Sorter – Sortfold</title>
 <meta name="description" content="Download and install Favorites Sorter manually in Chrome.">
 <style>
 :root { --bg:#fff; --fg:#1b1b1f; --mute:#5c5c66; --line:#e3e3ea; --acc:#6d4aff; --card:#f6f6fa; }
