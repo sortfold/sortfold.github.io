@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Favorites Sorter – Sortfold</title>
+<meta name="description" content="Download and install Favorites Sorter manually in Chrome.">
+<style>
+:root { --bg:#fff; --fg:#1b1b1f; --mute:#5c5c66; --line:#e3e3ea; --acc:#6d4aff; --card:#f6f6fa; }
+@media (prefers-color-scheme: dark) { :root { --bg:#141418; --fg:#ececf1; --mute:#a0a0ad; --line:#2c2c34; --acc:#9a83ff; --card:#1d1d24; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
+header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0 24px; }
+.brand { font-weight:700; }
+.lang button { background:none; border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 10px; cursor:pointer; font:inherit; }
+.lang button[aria-pressed="true"] { background:var(--acc); color:#fff; border-color:var(--acc); }
+h1 { font-size:2rem; line-height:1.2; margin:8px 0 12px; }
+h2 { font-size:1.3rem; margin:36px 0 8px; }
+.cta { display:inline-block; background:var(--acc); color:#fff; padding:10px 18px; border-radius:10px; text-decoration:none; font-weight:600; margin:8px 8px 8px 0; }
+.mute { color:var(--mute); }
+.warn { border-left:4px solid #e0a100; background:var(--card); padding:10px 14px; border-radius:6px; }
+code { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1px 6px; }
+a { color:var(--acc); }
+li { margin:6px 0; }
+footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); color:var(--mute); font-size:.9rem; }
+html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="brand" href="./" style="text-decoration:none;color:inherit">Favorites Sorter</a>
+  <span class="lang"><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+</header>
+
+<div lang="en">
+<h1>Install Favorites Sorter manually</h1>
+<p>Use this page if you cannot install the extension from the Chrome Web Store. It works in Chrome, Edge, Brave and other Chromium browsers.</p>
+<p><a class="cta" href="favorites-sorter-0.5.0.zip" download>Download version 0.5.0 (.zip)</a></p>
+
+<h2>Steps</h2>
+<ol>
+  <li>Unzip the file into a folder you will keep (for example <code>Documents\favorites-sorter</code>). Do not delete the folder afterwards: the browser loads the extension from it.</li>
+  <li>Open <code>chrome://extensions</code> (in Edge: <code>edge://extensions</code>).</li>
+  <li>Turn on <b>Developer mode</b> (top right).</li>
+  <li>Click <b>Load unpacked</b> and choose the folder that contains <code>manifest.json</code>.</li>
+  <li>Open <code>tiktok.com</code> and sign in: a floating <b>⇄ Trier mes favoris</b> button appears. Click it, then choose "Importer depuis mon profil TikTok".</li>
+</ol>
+
+<h2>Good to know</h2>
+<ul>
+  <li>Chrome may show a message about extensions in developer mode when it starts. Keep the extension by dismissing it, or reinstall from the Web Store when it is available.</li>
+  <li><b>Updates are manual:</b> download the new .zip, replace the folder's content, then click the reload arrow (↻) on the extension card and reload tiktok.com.</li>
+  <li>To use Pro, buy the license on the <a href="./">home page</a> and paste the key in the extension, Settings → License.</li>
+  <li>Your data stays in the browser. Removing the extension deletes it.</li>
+</ul>
+
+<p class="warn">The extension automates actions on your TikTok account, which may go against TikTok's terms of service. TikTok may limit, suspend or ban an account. Use it at your own risk. Not affiliated with TikTok.</p>
+</div>
+
+<div lang="fr">
+<h1>Installer Trieur de favoris à la main</h1>
+<p>Utilise cette page si tu ne peux pas installer l'extension depuis le Chrome Web Store. Elle fonctionne sur Chrome, Edge, Brave et les autres navigateurs Chromium.</p>
+<p><a class="cta" href="favorites-sorter-0.5.0.zip" download>Télécharger la version 0.5.0 (.zip)</a></p>
+
+<h2>Étapes</h2>
+<ol>
+  <li>Décompresse le fichier dans un dossier que tu garderas (par exemple <code>Documents\favorites-sorter</code>). Ne supprime pas le dossier ensuite : le navigateur charge l'extension depuis celui-ci.</li>
+  <li>Ouvre <code>chrome://extensions</code> (sur Edge : <code>edge://extensions</code>).</li>
+  <li>Active le <b>Mode développeur</b> (en haut à droite).</li>
+  <li>Clique sur <b>Charger l'extension non empaquetée</b> et choisis le dossier qui contient <code>manifest.json</code>.</li>
+  <li>Ouvre <code>tiktok.com</code> et connecte-toi : un bouton flottant <b>⇄ Trier mes favoris</b> apparaît. Clique dessus, puis sur « Importer depuis mon profil TikTok ».</li>
+</ol>
+
+<h2>Bon à savoir</h2>
+<ul>
+  <li>Chrome peut afficher un message sur les extensions en mode développeur au démarrage. Ferme-le pour garder l'extension, ou réinstalle-la depuis le Web Store quand elle y sera.</li>
+  <li><b>Les mises à jour sont manuelles :</b> télécharge le nouveau .zip, remplace le contenu du dossier, clique sur la flèche de rechargement (↻) de l'extension, puis recharge tiktok.com.</li>
+  <li>Pour le Pro, achète la licence sur la <a href="./">page d'accueil</a> et colle la clé dans l'extension, réglages → Licence.</li>
+  <li>Tes données restent dans le navigateur. Supprimer l'extension les efface.</li>
+</ul>
+
+<p class="warn">L'extension automatise des actions sur ton compte TikTok, ce qui peut aller à l'encontre des conditions d'utilisation de TikTok. TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Non affilié à TikTok.</p>
+</div>
+
+<footer>© 2026 Sortfold</footer>
+</main>
+<script>
+(function () {
+  var root = document.documentElement, btns = document.querySelectorAll('.lang button');
+  function set(l) {
+    root.setAttribute('data-lang', l); root.lang = l;
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  set(saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+})();
+</script>
+</body>
+</html>
