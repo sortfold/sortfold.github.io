@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Install Favorites Sorter – Sortfold</title>
-<meta name="description" content="Install Favorites Sorter in Chrome in 2 minutes, step by step. Installer Trieur de favoris dans Chrome en 2 minutes.">
+<title>Install Favorites Cleaner for TikTok – Sortfold</title>
+<meta name="description" content="Install Favorites Cleaner for TikTok in Chrome in 2 minutes, step by step. Installer Nettoyeur de favoris pour TikTok dans Chrome en 2 minutes.">
 <style>
 :root { --bg:#fff; --fg:#1b1b1f; --mute:#5c5c66; --line:#e3e3ea; --acc:#6d4aff; --card:#f6f6fa; }
 @media (prefers-color-scheme: dark) { :root { --bg:#141418; --fg:#ececf1; --mute:#a0a0ad; --line:#2c2c34; --acc:#9a83ff; --card:#1d1d24; } }
@@ -37,13 +38,13 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <body>
 <main>
 <header>
-  <a class="brand" href="./">Favorites Sorter</a>
+  <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28" style="vertical-align:-8px;margin-right:8px">Favorites Cleaner for TikTok</a>
   <span class="lang"><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
 </header>
 
 <!-- ============ ENGLISH ============ -->
 <div lang="en">
-<h1>Install Favorites Sorter</h1>
+<h1>Install Favorites Cleaner for TikTok</h1>
 <p class="lead">Takes about 2 minutes. Works in Chrome, Edge and Brave on a computer.</p>
 <p><a class="cta" href="favorites-sorter.zip" download>⬇ Download (.zip)</a></p>
 
@@ -51,7 +52,7 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
   <li><b>Unzip the file you just downloaded.</b><span>Right-click it → <i>Extract all</i> (or <i>Extract to “favorites-sorter/”</i> if you use 7-Zip or WinRAR). Put the new <code>favorites-sorter</code> folder somewhere you will keep it, for example in <i>Documents</i>. Do not delete it later: the browser runs the extension from this folder.</span></li>
   <li><b>Open the extensions page.</b><span>In the address bar of Chrome, type <code>chrome://extensions</code> and press Enter. (Edge: <code>edge://extensions</code>.)</span></li>
   <li><b>Turn on “Developer mode”.</b><span>It is a switch at the top right of that page.</span></li>
-  <li><b>Click “Load unpacked”</b><span>A window opens: select the <code>favorites-sorter</code> folder you just unzipped, then click <i>Select folder</i>. Favorites Sorter now appears in your list.</span></li>
+  <li><b>Click “Load unpacked”</b><span>A window opens: select the <code>favorites-sorter</code> folder you just unzipped, then click <i>Select folder</i>. Favorites Cleaner for TikTok now appears in your list.</span></li>
   <li><b>Open TikTok.</b><span>Go to <code>tiktok.com</code> and sign in. A red button <b style="display:inline">⇄ Sort my favorites</b> appears at the bottom right. Click it, then <i>Import from my TikTok profile</i>.</span></li>
 </ol>
 
@@ -66,19 +67,20 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <h2>It does not work?</h2>
 <div class="faq">
   <p><b>“Manifest file is missing or unreadable”</b>You selected the wrong folder. Select the <code>favorites-sorter</code> folder itself (the one you see <code>manifest.json</code> in when you open it), not the .zip file and not a folder around it.</p>
-  <p><b>I do not see the red button on TikTok.</b>Reload the TikTok page (<kbd>F5</kbd>). Check on <code>chrome://extensions</code> that Favorites Sorter is switched on.</p>
+  <p><b>I do not see the red button on TikTok.</b>Reload the TikTok page (<kbd>F5</kbd>). Check on <code>chrome://extensions</code> that Favorites Cleaner for TikTok is switched on.</p>
   <p><b>The panel says I am not signed in.</b>Sign in to TikTok first, then open your own profile once.</p>
-  <p><b>How do I update?</b>Download the new .zip, unzip it over the same folder (replace the files), then on <code>chrome://extensions</code> click the round arrow ↻ on the Favorites Sorter card and reload TikTok. Your data is kept.</p>
-  <p><b>How do I remove it?</b>On <code>chrome://extensions</code>, click <i>Remove</i>. Your sorting data is deleted with it.</p>
+  <p><b>How do I update without losing my sorting?</b>Unzip the new .zip <b>into the same folder</b> (replace the files), then on <code>chrome://extensions</code> click the round arrow ↻ on the Favorites Cleaner for TikTok card and reload TikTok. Your data is kept. <b>Do not</b> click <i>Remove</i> and do not load a different folder: that starts from zero.</p>
+  <p><b>How do I remove it?</b>First make a backup: in the panel, <i>Activity</i> tab → <b>Export my data</b> (free). Then on <code>chrome://extensions</code>, click <i>Remove</i>: your sorting is deleted with it. To get it back later, install again and use <b>Restore a backup</b>.</p>
+  <p><b>I moved or reinstalled and my sorting is gone.</b>The extension keeps your data inside itself, so a new folder or a fresh install starts empty. If you made a backup, open <i>Activity</i> → <b>Restore a backup</b> and pick the file (<code>tiktok-swipe-sauvegarde-….json</code>).</p>
   <p><b>Still stuck?</b>Write to <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> with what you did and what you saw.</p>
 </div>
 
-<p class="warn">Favorites Sorter clicks on TikTok for you. This may go against TikTok's terms of service: TikTok may limit, suspend or ban an account. Use it at your own risk. Not affiliated with TikTok.</p>
+<p class="warn">Favorites Cleaner for TikTok clicks on TikTok for you. This may go against TikTok's terms of service: TikTok may limit, suspend or ban an account. Use it at your own risk. Not affiliated with TikTok.</p>
 </div>
 
 <!-- ============ FRANÇAIS ============ -->
 <div lang="fr">
-<h1>Installer Trieur de favoris</h1>
+<h1>Installer Nettoyeur de favoris pour TikTok</h1>
 <p class="lead">Environ 2 minutes. Fonctionne sur ordinateur avec Chrome, Edge et Brave.</p>
 <p><a class="cta" href="favorites-sorter.zip" download>⬇ Télécharger (.zip)</a></p>
 
@@ -86,7 +88,7 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
   <li><b>Décompresse le fichier téléchargé.</b><span>Clic droit dessus → <i>Extraire tout</i> (ou <i>Extraire vers « favorites-sorter/ »</i> si tu utilises 7-Zip ou WinRAR). Mets le nouveau dossier <code>favorites-sorter</code> à un endroit où il restera, par exemple dans <i>Documents</i>. Ne le supprime pas ensuite : le navigateur fait tourner l'extension depuis ce dossier.</span></li>
   <li><b>Ouvre la page des extensions.</b><span>Dans la barre d'adresse de Chrome, tape <code>chrome://extensions</code> puis Entrée. (Edge : <code>edge://extensions</code>.)</span></li>
   <li><b>Active le « Mode développeur ».</b><span>C'est un interrupteur en haut à droite de cette page.</span></li>
-  <li><b>Clique sur « Charger l'extension non empaquetée »</b><span>Une fenêtre s'ouvre : sélectionne le dossier <code>favorites-sorter</code> que tu viens de décompresser, puis clique sur <i>Sélectionner un dossier</i>. Trieur de favoris apparaît alors dans ta liste.</span></li>
+  <li><b>Clique sur « Charger l'extension non empaquetée »</b><span>Une fenêtre s'ouvre : sélectionne le dossier <code>favorites-sorter</code> que tu viens de décompresser, puis clique sur <i>Sélectionner un dossier</i>. Nettoyeur de favoris pour TikTok apparaît alors dans ta liste.</span></li>
   <li><b>Ouvre TikTok.</b><span>Va sur <code>tiktok.com</code> et connecte-toi. Un bouton rouge <b style="display:inline">⇄ Trier mes favoris</b> apparaît en bas à droite. Clique dessus, puis sur <i>Importer depuis mon profil TikTok</i>.</span></li>
 </ol>
 
@@ -101,14 +103,15 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <h2>Ça ne marche pas ?</h2>
 <div class="faq">
   <p><b>« Le fichier manifeste est manquant ou illisible »</b>Tu as sélectionné le mauvais dossier. Sélectionne le dossier <code>favorites-sorter</code> lui-même (celui où tu vois <code>manifest.json</code> quand tu l'ouvres), pas le fichier .zip ni un dossier qui l'entoure.</p>
-  <p><b>Je ne vois pas le bouton rouge sur TikTok.</b>Recharge la page TikTok (<kbd>F5</kbd>). Vérifie sur <code>chrome://extensions</code> que Trieur de favoris est activé.</p>
+  <p><b>Je ne vois pas le bouton rouge sur TikTok.</b>Recharge la page TikTok (<kbd>F5</kbd>). Vérifie sur <code>chrome://extensions</code> que Nettoyeur de favoris pour TikTok est activé.</p>
   <p><b>Le panneau dit que je ne suis pas connecté.</b>Connecte-toi d'abord à TikTok, puis ouvre une fois ton propre profil.</p>
-  <p><b>Comment mettre à jour ?</b>Télécharge le nouveau .zip, décompresse-le dans le même dossier (remplace les fichiers), puis sur <code>chrome://extensions</code> clique sur la flèche ronde ↻ de la carte Trieur de favoris et recharge TikTok. Tes données sont conservées.</p>
-  <p><b>Comment le supprimer ?</b>Sur <code>chrome://extensions</code>, clique sur <i>Supprimer</i>. Ton tri est supprimé avec.</p>
+  <p><b>Comment mettre à jour sans perdre mon tri ?</b>Décompresse le nouveau .zip <b>dans le même dossier</b> (remplace les fichiers), puis sur <code>chrome://extensions</code> clique sur la flèche ronde ↻ de la carte Nettoyeur de favoris pour TikTok et recharge TikTok. Tes données sont conservées. <b>Ne clique pas</b> sur <i>Supprimer</i> et ne charge pas un autre dossier : ça repart de zéro.</p>
+  <p><b>Comment le supprimer ?</b>Fais d'abord une sauvegarde : dans le panneau, onglet <i>Suivi</i> → <b>Exporter mes données</b> (gratuit). Puis sur <code>chrome://extensions</code>, clique sur <i>Supprimer</i> : ton tri est supprimé avec. Pour le retrouver plus tard, réinstalle et utilise <b>Restaurer une sauvegarde</b>.</p>
+  <p><b>J'ai déplacé ou réinstallé et mon tri a disparu.</b>L'extension garde tes données à l'intérieur d'elle-même : un nouveau dossier ou une nouvelle installation repart de zéro. Si tu as une sauvegarde, ouvre <i>Suivi</i> → <b>Restaurer une sauvegarde</b> et choisis le fichier (<code>tiktok-swipe-sauvegarde-….json</code>).</p>
   <p><b>Toujours bloqué ?</b>Écris à <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> en disant ce que tu as fait et ce que tu as vu.</p>
 </div>
 
-<p class="warn">Trieur de favoris clique sur TikTok à ta place. Cela peut aller à l'encontre des conditions d'utilisation de TikTok : TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Non affilié à TikTok.</p>
+<p class="warn">Nettoyeur de favoris pour TikTok clique sur TikTok à ta place. Cela peut aller à l'encontre des conditions d'utilisation de TikTok : TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Non affilié à TikTok.</p>
 </div>
 
 <footer>© 2026 Sortfold</footer>
