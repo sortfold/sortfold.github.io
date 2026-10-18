@@ -14,6 +14,10 @@ body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui,
 main { max-width:720px; margin:0 auto; padding:24px 16px 64px; }
 header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0 20px; }
 .brand { font-weight:700; text-decoration:none; color:inherit; }
+.don { display:inline-block; text-decoration:none; font-weight:700; color:#fff; background:linear-gradient(135deg,#ff2d75,#8a4dff); border-radius:8px; padding:4px 12px; margin-right:6px; }
+.don:hover { filter:brightness(1.1); }
+.lang { white-space:nowrap; }
+@media (max-width:480px) { .don { padding:4px 9px; } .don span { font-size:0; } .don span::before { content:"☕"; font-size:1rem; } }
 .lang button { background:none; border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 10px; cursor:pointer; font:inherit; }
 .lang button[aria-pressed="true"] { background:var(--acc); color:#fff; border-color:var(--acc); }
 h1 { font-size:2rem; line-height:1.2; margin:8px 0 8px; }
@@ -42,7 +46,7 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <main>
 <header>
   <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28" style="vertical-align:-8px;margin-right:8px">Favorites Cleaner for TikTok</a>
-  <span class="lang"><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span></a><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
 </header>
 
 <!-- ============ ENGLISH ============ -->
