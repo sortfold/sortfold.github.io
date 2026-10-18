@@ -27,14 +27,15 @@ h2 { font-size:1.25rem; margin:34px 0 8px; }
 a { color:var(--acc); }
 li { margin:5px 0; }
 footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--mute); font-size:.9rem; }
-html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
+html:not([data-lang]) [lang]:not([lang="en"]), html[data-lang="en"] [lang]:not([lang="en"]), html[data-lang="fr"] [lang]:not([lang="fr"]), html[data-lang="es"] [lang]:not([lang="es"]), html[data-lang="de"] [lang]:not([lang="de"]), html[data-lang="pt"] [lang]:not([lang="pt"]), html[data-lang="it"] [lang]:not([lang="it"]) { display:none; }
+.lang select { background:var(--card); border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 8px; font:inherit; cursor:pointer; }
 </style>
 </head>
 <body>
 <main>
 <header>
   <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28" style="vertical-align:-8px;margin-right:8px">Favorites Cleaner for TikTok</a>
-  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span></a><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span><span lang="es">☕ Donar</span><span lang="de">☕ Spenden</span><span lang="pt">☕ Doar</span><span lang="it">☕ Dona</span></a><select id="lang-sel" aria-label="Language"><option value="en">EN</option><option value="fr">FR</option><option value="es">ES</option><option value="de">DE</option><option value="pt">PT</option><option value="it">IT</option></select></span>
 </header>
 
 <!-- ============ ENGLISH ============ -->
@@ -107,20 +108,147 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 </ul>
 </div>
 
+<!-- ============ ESPAÑOL ============ -->
+<div lang="es">
+<h1>Condiciones, reembolsos y contacto</h1>
+<p class="mute">Última actualización: 18 de octubre de 2026 · Editor: Sortfold · La versión de referencia es la <a href="#contact-en">versión en inglés</a>.</p>
+<h2 id="contact-es">Contacto y ayuda</h2>
+<p class="box">Una pregunta, un problema, una solicitud de reembolso: escribe a <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a>. Indica qué hiciste, qué viste y, para un reembolso, tu número de pedido o el correo usado en la compra. Respondo lo antes posible, normalmente en unos días.</p>
+<h2>Qué obtienes</h2>
+<ul>
+  <li><b>Versión gratuita:</b> hasta 200 eliminaciones al día, ordenar, colecciones, deshacer y copia de seguridad, gratis.</li>
+  <li><b>Pro:</b> un pago único (actualmente 5 €, impuestos gestionados en el pago) para eliminaciones ilimitadas y hasta 3 pestañas en paralelo. Sin suscripción. Lemon Squeezy te envía una clave de licencia por correo.</li>
+  <li>Una clave se puede activar en 1 ordenador a la vez. Puedes desactivarla desde la extensión para usarla en otro.</li>
+</ul>
+<h2>Reembolsos</h2>
+<ul>
+  <li>Si Pro no te convence, pide el reembolso por correo <b>en los 14 días siguientes a la compra</b>. Sin dar motivos.</li>
+  <li>El reembolso vuelve al medio de pago original a través de Lemon Squeezy, el vendedor oficial. La licencia se desactiva después.</li>
+  <li>Las donaciones son voluntarias y no se reembolsan.</li>
+  <li>Nada en esta página limita los derechos que te da la ley de tu país.</li>
+</ul>
+<h2>Condiciones de uso</h2>
+<ul>
+  <li><b>Uso personal.</b> La extensión sirve para ordenar tus propios vídeos guardados. No revendas ni redistribuyas la versión Pro ni compartas tu clave.</li>
+  <li><b>Riesgo para tu cuenta de TikTok.</b> La extensión realiza acciones en TikTok por ti, lo que puede ir en contra de las condiciones de uso de TikTok. TikTok puede limitar, suspender o bloquear una cuenta. La usas bajo tu propia responsabilidad y el editor no responde de las decisiones de TikTok.</li>
+  <li><b>Una eliminación es irreversible.</b> Una vez quitado de tus favoritos, solo tú puedes volver a añadir el vídeo. Usa el plazo para deshacer y el registro de acciones.</li>
+  <li><b>Sin afiliación.</b> Favorites Cleaner for TikTok es independiente y no está afiliado, respaldado ni patrocinado por TikTok.</li>
+  <li><b>Disponibilidad.</b> TikTok puede cambiar su sitio en cualquier momento, lo que puede romper funciones hasta una actualización. La extensión se ofrece «tal cual», sin garantía, y la responsabilidad del editor se limita al importe pagado por Pro, en la medida que permita la ley.</li>
+  <li><b>Tus datos.</b> Ver la <a href="./#privacy-es">política de privacidad</a>: tu orden se queda en tu navegador.</li>
+</ul>
+</div>
+
+<!-- ============ DEUTSCH ============ -->
+<div lang="de">
+<h1>Bedingungen, Erstattung und Kontakt</h1>
+<p class="mute">Zuletzt aktualisiert: 18. Oktober 2026 · Herausgeber: Sortfold · Maßgeblich ist die <a href="#contact-en">englische Fassung</a>.</p>
+<h2 id="contact-de">Kontakt und Hilfe</h2>
+<p class="box">Eine Frage, ein Problem, eine Erstattung: Schreib an <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a>. Gib an, was du gemacht und was du gesehen hast, und für eine Erstattung deine Bestellnummer oder die beim Kauf verwendete E-Mail. Ich antworte so schnell wie möglich, meist innerhalb weniger Tage.</p>
+<h2>Was du bekommst</h2>
+<ul>
+  <li><b>Kostenlose Version:</b> bis zu 200 Entfernungen pro Tag, Sortieren, Sammlungen, Rückgängig und Sicherung, gratis.</li>
+  <li><b>Pro:</b> eine einmalige Zahlung (derzeit 5 €, Steuern beim Bezahlen berechnet) für unbegrenztes Entfernen und bis zu 3 parallele Tabs. Kein Abo. Lemon Squeezy schickt dir einen Lizenzschlüssel per E-Mail.</li>
+  <li>Ein Schlüssel kann auf 1 Computer gleichzeitig aktiviert werden. Du kannst ihn in der Erweiterung deaktivieren und auf einem anderen nutzen.</li>
+</ul>
+<h2>Erstattung</h2>
+<ul>
+  <li>Wenn dir Pro nicht gefällt, fordere die Erstattung per E-Mail <b>innerhalb von 14 Tagen nach dem Kauf</b> an. Ohne Begründung.</li>
+  <li>Die Erstattung geht über Lemon Squeezy, den offiziellen Verkäufer, auf das ursprüngliche Zahlungsmittel zurück. Die Lizenz wird danach deaktiviert.</li>
+  <li>Spenden sind freiwillig und werden nicht erstattet.</li>
+  <li>Nichts auf dieser Seite schränkt deine gesetzlichen Rechte ein.</li>
+</ul>
+<h2>Nutzungsbedingungen</h2>
+<ul>
+  <li><b>Persönliche Nutzung.</b> Die Erweiterung dient zum Sortieren deiner eigenen gespeicherten Videos. Verkauf oder verbreite die Pro-Version nicht weiter und teile deinen Schlüssel nicht.</li>
+  <li><b>Risiko für dein TikTok-Konto.</b> Die Erweiterung führt Aktionen auf TikTok für dich aus, was gegen die Nutzungsbedingungen von TikTok verstoßen kann. TikTok kann ein Konto einschränken, sperren oder bannen. Nutzung auf eigenes Risiko; der Herausgeber haftet nicht für Entscheidungen von TikTok.</li>
+  <li><b>Entfernen ist endgültig.</b> Ist ein Video aus deinen Favoriten entfernt, kannst nur du es wieder hinzufügen. Nutze die Rückgängig-Frist und das Protokoll.</li>
+  <li><b>Keine Verbindung.</b> Favorites Cleaner for TikTok ist unabhängig und nicht mit TikTok verbunden, von TikTok unterstützt oder gesponsert.</li>
+  <li><b>Verfügbarkeit.</b> TikTok kann seine Seite jederzeit ändern, was Funktionen bis zu einem Update stören kann. Die Erweiterung wird „wie besehen“ ohne Gewähr bereitgestellt; die Haftung des Herausgebers ist, soweit gesetzlich zulässig, auf den für Pro gezahlten Betrag begrenzt.</li>
+  <li><b>Deine Daten.</b> Siehe die <a href="./#privacy-de">Datenschutzerklärung</a>: Deine Sortierung bleibt in deinem Browser.</li>
+</ul>
+</div>
+
+<!-- ============ PORTUGUÊS ============ -->
+<div lang="pt">
+<h1>Termos, reembolso e contato</h1>
+<p class="mute">Última atualização: 18 de outubro de 2026 · Editor: Sortfold · A versão de referência é a <a href="#contact-en">versão em inglês</a>.</p>
+<h2 id="contact-pt">Contato e ajuda</h2>
+<p class="box">Uma pergunta, um problema, um pedido de reembolso: escreva para <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a>. Diga o que fez, o que viu e, para reembolso, o número do pedido ou o e-mail usado na compra. Respondo o quanto antes, normalmente em poucos dias.</p>
+<h2>O que você recebe</h2>
+<ul>
+  <li><b>Versão grátis:</b> até 200 remoções por dia, organização, coleções, desfazer e backup, sem custo.</li>
+  <li><b>Pro:</b> um pagamento único (hoje 5 €, impostos calculados no pagamento) para remoções ilimitadas e até 3 abas em paralelo. Sem assinatura. A Lemon Squeezy envia uma chave de licença por e-mail.</li>
+  <li>Uma chave pode ser ativada em 1 computador por vez. Você pode desativá-la pela extensão para usar em outro.</li>
+</ul>
+<h2>Reembolso</h2>
+<ul>
+  <li>Se o Pro não servir para você, peça o reembolso por e-mail <b>em até 14 dias após a compra</b>. Sem precisar explicar.</li>
+  <li>O reembolso volta para o meio de pagamento original pela Lemon Squeezy, a vendedora oficial. A licença é desativada em seguida.</li>
+  <li>Doações são voluntárias e não são reembolsadas.</li>
+  <li>Nada nesta página limita os direitos que a lei do seu país lhe garante.</li>
+</ul>
+<h2>Termos de uso</h2>
+<ul>
+  <li><b>Uso pessoal.</b> A extensão serve para organizar seus próprios vídeos salvos. Não revenda nem redistribua a versão Pro, nem compartilhe sua chave.</li>
+  <li><b>Risco para sua conta do TikTok.</b> A extensão faz ações no TikTok por você, o que pode ir contra os termos de uso do TikTok. O TikTok pode limitar, suspender ou banir uma conta. Use por sua conta e risco; o editor não responde pelas decisões do TikTok.</li>
+  <li><b>Uma remoção é irreversível.</b> Depois de removido dos favoritos, só você pode adicionar o vídeo de novo. Use o prazo para desfazer e o registro de ações.</li>
+  <li><b>Sem vínculo.</b> O Favorites Cleaner for TikTok é independente, sem vínculo, aprovação ou patrocínio do TikTok.</li>
+  <li><b>Disponibilidade.</b> O TikTok pode mudar o site a qualquer momento, o que pode quebrar funções até uma atualização. A extensão é fornecida "como está", sem garantia, e a responsabilidade do editor se limita ao valor pago pelo Pro, na medida permitida pela lei.</li>
+  <li><b>Seus dados.</b> Veja a <a href="./#privacy-pt">política de privacidade</a>: sua organização fica no seu navegador.</li>
+</ul>
+</div>
+
+<!-- ============ ITALIANO ============ -->
+<div lang="it">
+<h1>Condizioni, rimborsi e contatti</h1>
+<p class="mute">Ultimo aggiornamento: 18 ottobre 2026 · Editore: Sortfold · Fa fede la <a href="#contact-en">versione inglese</a>.</p>
+<h2 id="contact-it">Contatti e assistenza</h2>
+<p class="box">Una domanda, un problema, una richiesta di rimborso: scrivi a <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a>. Indica cosa hai fatto, cosa hai visto e, per un rimborso, il numero d'ordine o l'e-mail usata per l'acquisto. Rispondo il prima possibile, di solito in pochi giorni.</p>
+<h2>Cosa ottieni</h2>
+<ul>
+  <li><b>Versione gratuita:</b> fino a 200 rimozioni al giorno, ordinamento, raccolte, annulla e backup, gratis.</li>
+  <li><b>Pro:</b> un pagamento unico (attualmente 5 €, tasse gestite al pagamento) per rimozioni illimitate e fino a 3 schede in parallelo. Nessun abbonamento. Lemon Squeezy ti invia una chiave di licenza via e-mail.</li>
+  <li>Una chiave può essere attivata su 1 computer alla volta. Puoi disattivarla dall'estensione per usarla su un altro.</li>
+</ul>
+<h2>Rimborsi</h2>
+<ul>
+  <li>Se Pro non fa per te, chiedi il rimborso via e-mail <b>entro 14 giorni dall'acquisto</b>. Senza dover spiegare.</li>
+  <li>Il rimborso torna sul metodo di pagamento originale tramite Lemon Squeezy, il venditore ufficiale. La licenza viene poi disattivata.</li>
+  <li>Le donazioni sono volontarie e non vengono rimborsate.</li>
+  <li>Niente in questa pagina limita i diritti che la legge del tuo paese ti riconosce.</li>
+</ul>
+<h2>Condizioni d'uso</h2>
+<ul>
+  <li><b>Uso personale.</b> L'estensione serve a riordinare i tuoi video salvati. Non rivendere né ridistribuire la versione Pro e non condividere la tua chiave.</li>
+  <li><b>Rischio per il tuo account TikTok.</b> L'estensione esegue azioni su TikTok al posto tuo, cosa che può andare contro i termini d'uso di TikTok. TikTok può limitare, sospendere o bannare un account. La usi a tuo rischio e l'editore non risponde delle decisioni di TikTok.</li>
+  <li><b>Una rimozione è irreversibile.</b> Una volta tolto dai preferiti, solo tu puoi aggiungere di nuovo il video. Usa l'intervallo di annullamento e il registro delle azioni.</li>
+  <li><b>Nessuna affiliazione.</b> Favorites Cleaner for TikTok è indipendente e non è affiliato, approvato né sponsorizzato da TikTok.</li>
+  <li><b>Disponibilità.</b> TikTok può cambiare il sito in qualsiasi momento, cosa che può rompere delle funzioni fino a un aggiornamento. L'estensione è fornita «così com'è», senza garanzia, e la responsabilità dell'editore è limitata all'importo pagato per Pro, nei limiti di legge.</li>
+  <li><b>I tuoi dati.</b> Vedi l'<a href="./#privacy-it">informativa sulla privacy</a>: il tuo ordinamento resta nel tuo browser.</li>
+</ul>
+</div>
+
 <footer>© 2026 Sortfold · <a href="./">Home / Accueil</a> · <a href="install.html">Install / Installer</a></footer>
 </main>
 <script>
 (function () {
-  var root = document.documentElement, btns = document.querySelectorAll('.lang button');
+  var LANGS = ['en', 'fr', 'es', 'de', 'pt', 'it'];
+  var root = document.documentElement, sel = document.getElementById('lang-sel');
   function set(l) {
     root.setAttribute('data-lang', l); root.lang = l;
-    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    if (sel) sel.value = l;
     try { localStorage.setItem('lang', l); } catch (e) {}
   }
   var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
-  var hash = location.hash.slice(-2);
-  set(hash === 'fr' || hash === 'en' ? hash : saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
-  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+  var hash = location.hash.slice(-2), nav = (navigator.language || 'en').slice(0, 2);
+  set(LANGS.indexOf(hash) >= 0 ? hash : LANGS.indexOf(saved) >= 0 ? saved : LANGS.indexOf(nav) >= 0 ? nav : 'en');
+  if (sel) sel.addEventListener('change', function () { set(sel.value); });
+  function openPriv() {
+    var d = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); }
+  }
+  openPriv();
+  window.addEventListener('hashchange', openPriv);
 })();
 </script>
 </body>

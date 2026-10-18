@@ -59,14 +59,15 @@ footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); co
 .card.pro { border-color:var(--acc); }
 details.priv { margin-top:40px; border-top:1px solid var(--line); padding-top:14px; }
 details.priv summary { cursor:pointer; font-size:1.2rem; font-weight:700; }
-html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
+html:not([data-lang]) [lang]:not([lang="en"]), html[data-lang="en"] [lang]:not([lang="en"]), html[data-lang="fr"] [lang]:not([lang="fr"]), html[data-lang="es"] [lang]:not([lang="es"]), html[data-lang="de"] [lang]:not([lang="de"]), html[data-lang="pt"] [lang]:not([lang="pt"]), html[data-lang="it"] [lang]:not([lang="it"]) { display:none; }
+.lang select { background:var(--card); border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 8px; font:inherit; cursor:pointer; }
 </style>
 </head>
 <body>
 <main>
 <header>
   <span class="brand"><img src="icon.svg" alt="" width="28" height="28" style="vertical-align:-8px;margin-right:8px">Favorites Cleaner for TikTok</span>
-  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span></a><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span><span lang="es">☕ Donar</span><span lang="de">☕ Spenden</span><span lang="pt">☕ Doar</span><span lang="it">☕ Dona</span></a><select id="lang-sel" aria-label="Language"><option value="en">EN</option><option value="fr">FR</option><option value="es">ES</option><option value="de">DE</option><option value="pt">PT</option><option value="it">IT</option></select></span>
 </header>
 
 <!-- ============ ENGLISH ============ -->
@@ -137,7 +138,6 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
   <li><code>tiktok.com</code>: read and drive TikTok's interface to sort your favorites.</li>
   <li><code>api.lemonsqueezy.com</code>: verify the Pro license.</li>
   <li><code>storage</code>, <code>unlimitedStorage</code>: keep your data locally (thousands of favorites).</li>
-  <li><code>tabs</code>: open and close the worker tabs that remove videos.</li>
   <li><code>alarms</code>: resume the queue after a pause.</li>
   <li><code>declarativeNetRequest</code>: block images and video in worker tabs for speed.</li>
 </ul>
@@ -219,7 +219,6 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
   <li><code>tiktok.com</code> : lire et piloter l'interface de TikTok pour trier tes favoris.</li>
   <li><code>api.lemonsqueezy.com</code> : vérifier la licence Pro.</li>
   <li><code>storage</code>, <code>unlimitedStorage</code> : conserver tes données localement (plusieurs milliers de favoris).</li>
-  <li><code>tabs</code> : ouvrir et fermer les onglets de travail qui retirent les vidéos.</li>
   <li><code>alarms</code> : reprendre la file après une pause.</li>
   <li><code>declarativeNetRequest</code> : bloquer images et vidéos dans les onglets de travail pour aller plus vite.</li>
 </ul>
@@ -233,8 +232,212 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 </details>
 </div>
 
+<!-- ============ ESPAÑOL ============ -->
+<div lang="es">
+<h1>Limpia tus favoritos de TikTok en minutos.</h1>
+<p class="lead">¿Miles de vídeos guardados que nunca vuelves a ver? Favorites Cleaner for TikTok los convierte en un mazo de tarjetas: desliza para conservar, quitar de favoritos o mover a una colección. Gratis hasta 200 eliminaciones al día.</p>
+<p>
+  <a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Añadir a Chrome – es gratis</a>
+  <a class="cta alt" href="https://sortfold.lemonsqueezy.com/checkout/buy/2623d2b5-e6b6-4891-9971-4a9c636fb3e3">Obtener Pro – 5 €, un solo pago</a>
+</p>
+<p class="mute small">En la Chrome Web Store, también funciona en Edge y Brave. O <a href="install.html">instálala a mano (.zip)</a>.</p>
+<img class="hero" src="hero.png" alt="Favorites Cleaner for TikTok: limpia miles de vídeos guardados en minutos" width="1400" height="560">
+
+<h2>Cómo funciona</h2>
+<div class="grid">
+  <div class="card"><span class="n">1</span><br><b>Importa</b>Un clic lee tus favoritos de TikTok. Puedes empezar a ordenar mientras se cargan.</div>
+  <div class="card"><span class="n">2</span><br><b>Desliza</b>Izquierda = conservar · Derecha = quitar de favoritos · Arriba = mover a una colección.</div>
+  <div class="card"><span class="n">3</span><br><b>Listo</b>Las eliminaciones y los cambios de colección se envían a TikTok por ti, en segundo plano. Puedes deshacer durante unos segundos.</div>
+</div>
+
+<h2>Así se ve</h2>
+<div class="shots">
+  <figure><img src="deck.png" alt="El mazo de tarjetas con tus colecciones a la izquierda" width="1280" height="800" loading="lazy"><figcaption>Desliza un vídeo o suéltalo sobre una de tus colecciones.</figcaption></figure>
+  <figure><img src="status.png" alt="La pestaña Actividad: eliminaciones en curso, colecciones, importación, copia de seguridad" width="1280" height="800" loading="lazy"><figcaption>Sigue lo que se quita y se ordena, y tu importación.</figcaption></figure>
+</div>
+
+<h2>Gratis o Pro</h2>
+<div class="grid two">
+  <div class="card"><b>Gratis</b><ul><li>200 eliminaciones al día</li><li>Ordenar, colecciones, deshacer</li><li>Copia de seguridad y restauración</li><li>1 pestaña en segundo plano</li></ul></div>
+  <div class="card pro"><b>Pro – 5 €, un solo pago</b><ul><li>Eliminaciones ilimitadas</li><li>Hasta 3 pestañas a la vez, más rápido</li><li>Apoyas el desarrollo</li></ul></div>
+</div>
+<p class="mute">Un solo pago, sin suscripción, reembolso en 14 días si lo pides (<a href="terms.html">detalles</a>). Recibirás una clave de licencia por correo: haz clic en «⭐ Pasar a Pro» arriba en la extensión y pégala allí.</p>
+<p class="card">☕ <b style="display:inline">¿Te basta la versión gratuita?</b> Puedes dar las gracias con un café. <a class="cta alt" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener" style="margin:8px 0 0">☕ Donar en Ko-fi</a></p>
+
+<h2>Privada y honesta</h2>
+<p>Todo se queda en tu navegador: sin rastreo, sin anuncios. <a href="#privacy-es">Leer la política de privacidad</a>.</p>
+<p class="warn">La extensión automatiza acciones en tu cuenta de TikTok, lo que puede ir en contra de las condiciones de uso de TikTok. TikTok puede limitar, suspender o bloquear una cuenta. La usas bajo tu propia responsabilidad. Favorites Cleaner for TikTok es una herramienta independiente, no afiliada, respaldada ni patrocinada por TikTok.</p>
+
+<details id="privacy-es" class="priv"><summary>Política de privacidad</summary>
+<p class="mute">Última actualización: 18 de octubre de 2026 · Editor: Sortfold</p>
+<ul>
+  <li>Tus favoritos, colecciones, decisiones y ajustes <b>se quedan en tu ordenador</b>. El editor no tiene acceso a ellos.</li>
+  <li>La extensión <b>no contiene estadísticas, rastreadores, anuncios ni cookies</b>.</li>
+  <li>En <code>tiktok.com</code>, la extensión lee lo que se muestra (tus favoritos, colecciones, identificadores de vídeo, nombre de la cuenta) y hace clic en los botones de TikTok por ti. Nada de esto se envía a nadie.</li>
+  <li>La única comunicación con un servidor es la verificación de la licencia Pro con Lemon Squeezy (<code>api.lemonsqueezy.com</code>), solo si usas una licencia: se envían la clave, un nombre de instancia y el identificador de activación. Política de Lemon Squeezy: <a href="https://www.lemonsqueezy.com/privacy">lemonsqueezy.com/privacy</a>.</li>
+  <li>El pago lo gestiona Lemon Squeezy (vendedor oficial); el editor nunca ve tus datos bancarios. Las donaciones pasan por Ko-fi, un servicio externo.</li>
+  <li>Permisos: <code>tiktok.com</code> (leer y manejar TikTok), <code>api.lemonsqueezy.com</code> (licencia), <code>storage</code>/<code>unlimitedStorage</code> (datos locales), <code>alarms</code> (reanudar la cola), <code>declarativeNetRequest</code> (bloquear imágenes y vídeos en las pestañas de trabajo). No se carga código desde Internet.</li>
+  <li>«Restablecer todo» o desinstalar la extensión borra los datos. Para los datos de venta (nombre, correo, factura): <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> (RGPD).</li>
+</ul>
+<p class="mute">La versión de referencia es la <a href="#privacy-en">política en inglés</a>.</p>
+</details>
+</div>
+
+<!-- ============ DEUTSCH ============ -->
+<div lang="de">
+<h1>Räum deine TikTok-Favoriten in wenigen Minuten auf.</h1>
+<p class="lead">Tausende gespeicherte Videos, die du nie wieder ansiehst? Favorites Cleaner for TikTok macht daraus einen Kartenstapel: wischen zum Behalten, Entfernen aus den Favoriten oder Ablegen in einer Sammlung. Kostenlos bis zu 200 Entfernungen pro Tag.</p>
+<p>
+  <a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Zu Chrome hinzufügen – kostenlos</a>
+  <a class="cta alt" href="https://sortfold.lemonsqueezy.com/checkout/buy/2623d2b5-e6b6-4891-9971-4a9c636fb3e3">Pro holen – 5 €, einmalig</a>
+</p>
+<p class="mute small">Im Chrome Web Store, funktioniert auch mit Edge und Brave. Oder <a href="install.html">von Hand installieren (.zip)</a>.</p>
+<img class="hero" src="hero.png" alt="Favorites Cleaner for TikTok: tausende gespeicherte Videos in Minuten aufräumen" width="1400" height="560">
+
+<h2>So funktioniert's</h2>
+<div class="grid">
+  <div class="card"><span class="n">1</span><br><b>Importieren</b>Ein Klick liest deine TikTok-Favoriten. Du kannst schon während des Ladens sortieren.</div>
+  <div class="card"><span class="n">2</span><br><b>Wischen</b>Links = behalten · Rechts = aus Favoriten entfernen · Oben = in eine Sammlung ablegen.</div>
+  <div class="card"><span class="n">3</span><br><b>Fertig</b>Entfernen und Ablegen werden für dich im Hintergrund an TikTok gesendet. Ein paar Sekunden lang kannst du es rückgängig machen.</div>
+</div>
+
+<h2>Ansehen</h2>
+<div class="shots">
+  <figure><img src="deck.png" alt="Der Kartenstapel mit deinen Sammlungen links" width="1280" height="800" loading="lazy"><figcaption>Wisch ein Video oder leg es auf einer deiner Sammlungen ab.</figcaption></figure>
+  <figure><img src="status.png" alt="Der Tab Aktivität: laufende Entfernungen, Sammlungen, Import, Sicherung" width="1280" height="800" loading="lazy"><figcaption>Verfolge, was entfernt und abgelegt wird, und deinen Import.</figcaption></figure>
+</div>
+
+<h2>Kostenlos oder Pro</h2>
+<div class="grid two">
+  <div class="card"><b>Kostenlos</b><ul><li>200 Entfernungen pro Tag</li><li>Sortieren, Sammlungen, Rückgängig</li><li>Sicherung und Wiederherstellung</li><li>1 Tab im Hintergrund</li></ul></div>
+  <div class="card pro"><b>Pro – 5 €, einmalig</b><ul><li>Unbegrenztes Entfernen</li><li>Bis zu 3 Tabs gleichzeitig, schneller</li><li>Du unterstützt die Entwicklung</li></ul></div>
+</div>
+<p class="mute">Eine Zahlung, kein Abo, Erstattung innerhalb von 14 Tagen auf Anfrage (<a href="terms.html">Details</a>). Du bekommst einen Lizenzschlüssel per E-Mail: Klick oben in der Erweiterung auf „⭐ Pro holen“ und füge ihn dort ein.</p>
+<p class="card">☕ <b style="display:inline">Dir reicht die kostenlose Version?</b> Du kannst trotzdem mit einem Kaffee Danke sagen. <a class="cta alt" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener" style="margin:8px 0 0">☕ Auf Ko-fi spenden</a></p>
+
+<h2>Privat und ehrlich</h2>
+<p>Alles bleibt in deinem Browser: kein Tracking, keine Werbung. <a href="#privacy-de">Datenschutzerklärung lesen</a>.</p>
+<p class="warn">Die Erweiterung automatisiert Aktionen in deinem TikTok-Konto, was gegen die Nutzungsbedingungen von TikTok verstoßen kann. TikTok kann ein Konto einschränken, sperren oder bannen. Nutzung auf eigenes Risiko. Favorites Cleaner for TikTok ist ein unabhängiges Tool und nicht mit TikTok verbunden, von TikTok unterstützt oder gesponsert.</p>
+
+<details id="privacy-de" class="priv"><summary>Datenschutzerklärung</summary>
+<p class="mute">Zuletzt aktualisiert: 18. Oktober 2026 · Herausgeber: Sortfold</p>
+<ul>
+  <li>Deine Favoriten, Sammlungen, Entscheidungen und Einstellungen <b>bleiben auf deinem Computer</b>. Der Herausgeber hat keinen Zugriff darauf.</li>
+  <li>Die Erweiterung enthält <b>keine Statistiken, Tracker, Werbung oder Cookies</b>.</li>
+  <li>Auf <code>tiktok.com</code> liest die Erweiterung, was angezeigt wird (deine Favoriten, Sammlungen, Video-IDs, Kontoname), und klickt für dich auf die Schaltflächen von TikTok. Nichts davon wird an irgendwen gesendet.</li>
+  <li>Die einzige Verbindung zu einem Server ist die Prüfung der Pro-Lizenz bei Lemon Squeezy (<code>api.lemonsqueezy.com</code>), nur wenn du eine Lizenz nutzt: gesendet werden der Schlüssel, ein Instanzname und die Aktivierungs-ID. Datenschutz von Lemon Squeezy: <a href="https://www.lemonsqueezy.com/privacy">lemonsqueezy.com/privacy</a>.</li>
+  <li>Die Zahlung wickelt Lemon Squeezy ab (offizieller Verkäufer); der Herausgeber sieht nie deine Zahlungsdaten. Spenden laufen über Ko-fi, einen externen Dienst.</li>
+  <li>Berechtigungen: <code>tiktok.com</code> (TikTok lesen und bedienen), <code>api.lemonsqueezy.com</code> (Lizenz), <code>storage</code>/<code>unlimitedStorage</code> (lokale Daten), <code>alarms</code> (Warteschlange fortsetzen), <code>declarativeNetRequest</code> (Bilder und Videos in Arbeits-Tabs blockieren). Es wird kein Code aus dem Internet geladen.</li>
+  <li>„Alles zurücksetzen“ oder das Deinstallieren löscht die Daten. Für Verkaufsdaten (Name, E-Mail, Rechnung): <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> (DSGVO).</li>
+</ul>
+<p class="mute">Maßgeblich ist die <a href="#privacy-en">englische Fassung</a>.</p>
+</details>
+</div>
+
+<!-- ============ PORTUGUÊS ============ -->
+<div lang="pt">
+<h1>Limpe seus favoritos do TikTok em minutos.</h1>
+<p class="lead">Milhares de vídeos salvos que você nunca mais vê? O Favorites Cleaner for TikTok transforma tudo em um baralho de cartões: deslize para manter, remover dos favoritos ou colocar em uma coleção. Grátis até 200 remoções por dia.</p>
+<p>
+  <a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Adicionar ao Chrome – é grátis</a>
+  <a class="cta alt" href="https://sortfold.lemonsqueezy.com/checkout/buy/2623d2b5-e6b6-4891-9971-4a9c636fb3e3">Obter o Pro – 5 €, pagamento único</a>
+</p>
+<p class="mute small">Na Chrome Web Store, também funciona no Edge e no Brave. Ou <a href="install.html">instale à mão (.zip)</a>.</p>
+<img class="hero" src="hero.png" alt="Favorites Cleaner for TikTok: limpe milhares de vídeos salvos em minutos" width="1400" height="560">
+
+<h2>Como funciona</h2>
+<div class="grid">
+  <div class="card"><span class="n">1</span><br><b>Importe</b>Um clique lê seus favoritos do TikTok. Você já pode organizar enquanto carrega.</div>
+  <div class="card"><span class="n">2</span><br><b>Deslize</b>Esquerda = manter · Direita = remover dos favoritos · Cima = colocar em uma coleção.</div>
+  <div class="card"><span class="n">3</span><br><b>Pronto</b>As remoções e as coleções são enviadas ao TikTok por você, em segundo plano. Dá para desfazer por alguns segundos.</div>
+</div>
+
+<h2>Veja</h2>
+<div class="shots">
+  <figure><img src="deck.png" alt="O baralho de cartões com suas coleções à esquerda" width="1280" height="800" loading="lazy"><figcaption>Deslize um vídeo ou solte-o sobre uma das suas coleções.</figcaption></figure>
+  <figure><img src="status.png" alt="A aba Atividade: remoções em andamento, coleções, importação, backup" width="1280" height="800" loading="lazy"><figcaption>Acompanhe o que é removido e organizado, e sua importação.</figcaption></figure>
+</div>
+
+<h2>Grátis ou Pro</h2>
+<div class="grid two">
+  <div class="card"><b>Grátis</b><ul><li>200 remoções por dia</li><li>Organizar, coleções, desfazer</li><li>Backup e restauração</li><li>1 aba em segundo plano</li></ul></div>
+  <div class="card pro"><b>Pro – 5 €, pagamento único</b><ul><li>Remoções ilimitadas</li><li>Até 3 abas ao mesmo tempo, mais rápido</li><li>Você apoia o desenvolvimento</li></ul></div>
+</div>
+<p class="mute">Um pagamento, sem assinatura, reembolso em até 14 dias se pedir (<a href="terms.html">detalhes</a>). Você recebe uma chave de licença por e-mail: clique em "⭐ Obter o Pro" no topo da extensão e cole a chave lá.</p>
+<p class="card">☕ <b style="display:inline">A versão grátis é suficiente?</b> Você ainda pode agradecer com um café. <a class="cta alt" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener" style="margin:8px 0 0">☕ Doar no Ko-fi</a></p>
+
+<h2>Privada e honesta</h2>
+<p>Tudo fica no seu navegador: sem rastreamento, sem anúncios. <a href="#privacy-pt">Ler a política de privacidade</a>.</p>
+<p class="warn">A extensão automatiza ações na sua conta do TikTok, o que pode ir contra os termos de uso do TikTok. O TikTok pode limitar, suspender ou banir uma conta. Use por sua conta e risco. O Favorites Cleaner for TikTok é uma ferramenta independente, sem vínculo, aprovação ou patrocínio do TikTok.</p>
+
+<details id="privacy-pt" class="priv"><summary>Política de privacidade</summary>
+<p class="mute">Última atualização: 18 de outubro de 2026 · Editor: Sortfold</p>
+<ul>
+  <li>Seus favoritos, coleções, decisões e configurações <b>ficam no seu computador</b>. O editor não tem acesso a eles.</li>
+  <li>A extensão <b>não tem estatísticas, rastreadores, anúncios nem cookies</b>.</li>
+  <li>No <code>tiktok.com</code>, a extensão lê o que aparece na tela (seus favoritos, coleções, IDs de vídeo, nome da conta) e clica nos botões do TikTok por você. Nada disso é enviado a ninguém.</li>
+  <li>A única comunicação com um servidor é a verificação da licença Pro com a Lemon Squeezy (<code>api.lemonsqueezy.com</code>), só se você usar uma licença: são enviados a chave, um nome de instância e o ID de ativação. Política da Lemon Squeezy: <a href="https://www.lemonsqueezy.com/privacy">lemonsqueezy.com/privacy</a>.</li>
+  <li>O pagamento é feito pela Lemon Squeezy (vendedora oficial); o editor nunca vê seus dados bancários. As doações passam pelo Ko-fi, um serviço externo.</li>
+  <li>Permissões: <code>tiktok.com</code> (ler e controlar o TikTok), <code>api.lemonsqueezy.com</code> (licença), <code>storage</code>/<code>unlimitedStorage</code> (dados locais), <code>alarms</code> (retomar a fila), <code>declarativeNetRequest</code> (bloquear imagens e vídeos nas abas de trabalho). Nenhum código é carregado da internet.</li>
+  <li>"Redefinir tudo" ou desinstalar a extensão apaga os dados. Para dados de venda (nome, e-mail, fatura): <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> (LGPD/RGPD).</li>
+</ul>
+<p class="mute">A versão de referência é a <a href="#privacy-en">política em inglês</a>.</p>
+</details>
+</div>
+
+<!-- ============ ITALIANO ============ -->
+<div lang="it">
+<h1>Ripulisci i tuoi preferiti di TikTok in pochi minuti.</h1>
+<p class="lead">Migliaia di video salvati che non riguardi mai? Favorites Cleaner for TikTok li trasforma in un mazzo di schede: scorri per tenerli, toglierli dai preferiti o metterli in una raccolta. Gratis fino a 200 rimozioni al giorno.</p>
+<p>
+  <a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Aggiungi a Chrome – è gratis</a>
+  <a class="cta alt" href="https://sortfold.lemonsqueezy.com/checkout/buy/2623d2b5-e6b6-4891-9971-4a9c636fb3e3">Passa a Pro – 5 €, una volta</a>
+</p>
+<p class="mute small">Sul Chrome Web Store, funziona anche con Edge e Brave. Oppure <a href="install.html">installala a mano (.zip)</a>.</p>
+<img class="hero" src="hero.png" alt="Favorites Cleaner for TikTok: ripulisci migliaia di video salvati in pochi minuti" width="1400" height="560">
+
+<h2>Come funziona</h2>
+<div class="grid">
+  <div class="card"><span class="n">1</span><br><b>Importa</b>Un clic legge i tuoi preferiti di TikTok. Puoi iniziare a ordinare mentre si caricano.</div>
+  <div class="card"><span class="n">2</span><br><b>Scorri</b>Sinistra = tieni · Destra = togli dai preferiti · Su = metti in una raccolta.</div>
+  <div class="card"><span class="n">3</span><br><b>Fatto</b>Rimozioni e inserimenti vengono inviati a TikTok al posto tuo, in background. Puoi annullare per qualche secondo.</div>
+</div>
+
+<h2>Guarda</h2>
+<div class="shots">
+  <figure><img src="deck.png" alt="Il mazzo di schede con le tue raccolte a sinistra" width="1280" height="800" loading="lazy"><figcaption>Scorri un video o rilascialo su una delle tue raccolte.</figcaption></figure>
+  <figure><img src="status.png" alt="La scheda Attività: rimozioni in corso, raccolte, importazione, backup" width="1280" height="800" loading="lazy"><figcaption>Segui cosa viene rimosso e inserito, e la tua importazione.</figcaption></figure>
+</div>
+
+<h2>Gratis o Pro</h2>
+<div class="grid two">
+  <div class="card"><b>Gratis</b><ul><li>200 rimozioni al giorno</li><li>Ordinamento, raccolte, annulla</li><li>Backup e ripristino</li><li>1 scheda in background</li></ul></div>
+  <div class="card pro"><b>Pro – 5 €, una volta</b><ul><li>Rimozioni illimitate</li><li>Fino a 3 schede insieme, più veloce</li><li>Sostieni lo sviluppo</li></ul></div>
+</div>
+<p class="mute">Un solo pagamento, nessun abbonamento, rimborso entro 14 giorni su richiesta (<a href="terms.html">dettagli</a>). Ricevi una chiave di licenza via e-mail: clicca su «⭐ Passa a Pro» in alto nell'estensione e incollala lì.</p>
+<p class="card">☕ <b style="display:inline">Ti basta la versione gratuita?</b> Puoi comunque dire grazie con un caffè. <a class="cta alt" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener" style="margin:8px 0 0">☕ Dona su Ko-fi</a></p>
+
+<h2>Privata e onesta</h2>
+<p>Tutto resta nel tuo browser: niente tracciamento, niente pubblicità. <a href="#privacy-it">Leggi l'informativa sulla privacy</a>.</p>
+<p class="warn">L'estensione automatizza azioni sul tuo account TikTok, cosa che può andare contro i termini d'uso di TikTok. TikTok può limitare, sospendere o bannare un account. La usi a tuo rischio. Favorites Cleaner for TikTok è uno strumento indipendente, non affiliato, approvato né sponsorizzato da TikTok.</p>
+
+<details id="privacy-it" class="priv"><summary>Informativa sulla privacy</summary>
+<p class="mute">Ultimo aggiornamento: 18 ottobre 2026 · Editore: Sortfold</p>
+<ul>
+  <li>I tuoi preferiti, raccolte, scelte e impostazioni <b>restano sul tuo computer</b>. L'editore non vi ha accesso.</li>
+  <li>L'estensione <b>non contiene statistiche, tracker, pubblicità né cookie</b>.</li>
+  <li>Su <code>tiktok.com</code>, l'estensione legge ciò che è mostrato (preferiti, raccolte, ID dei video, nome dell'account) e clicca sui pulsanti di TikTok al posto tuo. Niente di tutto questo viene inviato a nessuno.</li>
+  <li>L'unica comunicazione con un server è la verifica della licenza Pro presso Lemon Squeezy (<code>api.lemonsqueezy.com</code>), solo se usi una licenza: vengono inviati la chiave, un nome di istanza e l'ID di attivazione. Informativa di Lemon Squeezy: <a href="https://www.lemonsqueezy.com/privacy">lemonsqueezy.com/privacy</a>.</li>
+  <li>Il pagamento è gestito da Lemon Squeezy (venditore ufficiale); l'editore non vede mai i tuoi dati di pagamento. Le donazioni passano da Ko-fi, un servizio esterno.</li>
+  <li>Permessi: <code>tiktok.com</code> (leggere e usare TikTok), <code>api.lemonsqueezy.com</code> (licenza), <code>storage</code>/<code>unlimitedStorage</code> (dati locali), <code>alarms</code> (riprendere la coda), <code>declarativeNetRequest</code> (bloccare immagini e video nelle schede di lavoro). Nessun codice viene caricato da Internet.</li>
+  <li>«Reimposta tutto» o disinstallare l'estensione cancella i dati. Per i dati di vendita (nome, e-mail, fattura): <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> (GDPR).</li>
+</ul>
+<p class="mute">Fa fede la <a href="#privacy-en">versione inglese</a>.</p>
+</details>
+</div>
+
 <footer>
-  <p style="margin:0 0 8px"><span lang="en">Guides:</span><span lang="fr">Guides :</span>
+  <p style="margin:0 0 8px"><span lang="en">Guides:</span><span lang="fr">Guides :</span><span lang="es">Guías:</span><span lang="de">Anleitungen:</span><span lang="pt">Guias:</span><span lang="it">Guide:</span>
     <a href="how-to-delete-all-tiktok-favorites.html" hreflang="en">How to delete all TikTok favorites</a> ·
     <a href="supprimer-tous-ses-favoris-tiktok.html" hreflang="fr">Supprimer tous ses favoris TikTok</a> ·
     <a href="borrar-todos-los-favoritos-de-tiktok.html" hreflang="es">Borrar todos los favoritos de TikTok</a> ·
@@ -243,20 +446,25 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
     <a href="eliminare-tutti-i-preferiti-tiktok.html" hreflang="it">Eliminare tutti i preferiti TikTok</a></p>
   <span lang="en">© 2026 Sortfold. Favorites Cleaner for TikTok is not affiliated with TikTok. · <a href="terms.html">Terms and refunds</a> · <a href="mailto:sortfold@gmail.com">Contact</a> · <a href="https://ko-fi.com/sortfold">☕ Support on Ko-fi</a></span>
   <span lang="fr">© 2026 Sortfold. Nettoyeur de favoris pour TikTok n'est pas affilié à TikTok. · <a href="terms.html">Conditions et remboursement</a> · <a href="mailto:sortfold@gmail.com">Contact</a> · <a href="https://ko-fi.com/sortfold">☕ Soutenir sur Ko-fi</a></span>
+  <span lang="es">© 2026 Sortfold. Favorites Cleaner for TikTok no está afiliado a TikTok. · <a href="terms.html">Condiciones y reembolsos</a> · <a href="mailto:sortfold@gmail.com">Contacto</a> · <a href="https://ko-fi.com/sortfold">☕ Apoyar en Ko-fi</a></span>
+  <span lang="de">© 2026 Sortfold. Favorites Cleaner for TikTok ist nicht mit TikTok verbunden. · <a href="terms.html">Bedingungen und Erstattung</a> · <a href="mailto:sortfold@gmail.com">Kontakt</a> · <a href="https://ko-fi.com/sortfold">☕ Auf Ko-fi unterstützen</a></span>
+  <span lang="pt">© 2026 Sortfold. O Favorites Cleaner for TikTok não tem vínculo com o TikTok. · <a href="terms.html">Termos e reembolso</a> · <a href="mailto:sortfold@gmail.com">Contato</a> · <a href="https://ko-fi.com/sortfold">☕ Apoiar no Ko-fi</a></span>
+  <span lang="it">© 2026 Sortfold. Favorites Cleaner for TikTok non è affiliato a TikTok. · <a href="terms.html">Condizioni e rimborsi</a> · <a href="mailto:sortfold@gmail.com">Contatti</a> · <a href="https://ko-fi.com/sortfold">☕ Sostieni su Ko-fi</a></span>
 </footer>
 </main>
 <script>
 (function () {
-  var root = document.documentElement, btns = document.querySelectorAll('.lang button');
+  var LANGS = ['en', 'fr', 'es', 'de', 'pt', 'it'];
+  var root = document.documentElement, sel = document.getElementById('lang-sel');
   function set(l) {
     root.setAttribute('data-lang', l); root.lang = l;
-    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    if (sel) sel.value = l;
     try { localStorage.setItem('lang', l); } catch (e) {}
   }
   var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
-  var hash = location.hash.slice(-2);
-  set(hash === 'fr' || hash === 'en' ? hash : saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
-  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+  var hash = location.hash.slice(-2), nav = (navigator.language || 'en').slice(0, 2);
+  set(LANGS.indexOf(hash) >= 0 ? hash : LANGS.indexOf(saved) >= 0 ? saved : LANGS.indexOf(nav) >= 0 ? nav : 'en');
+  if (sel) sel.addEventListener('change', function () { set(sel.value); });
   function openPriv() {
     var d = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
     if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); }

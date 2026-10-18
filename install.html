@@ -39,14 +39,15 @@ code, kbd { background:var(--bg); border:1px solid var(--line); border-radius:6p
 .warn { border-left:4px solid #e0a100; background:var(--card); padding:10px 14px; border-radius:6px; font-size:.95rem; }
 a { color:var(--acc); }
 footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); color:var(--mute); font-size:.9rem; }
-html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:none; }
+html:not([data-lang]) [lang]:not([lang="en"]), html[data-lang="en"] [lang]:not([lang="en"]), html[data-lang="fr"] [lang]:not([lang="fr"]), html[data-lang="es"] [lang]:not([lang="es"]), html[data-lang="de"] [lang]:not([lang="de"]), html[data-lang="pt"] [lang]:not([lang="pt"]), html[data-lang="it"] [lang]:not([lang="it"]) { display:none; }
+.lang select { background:var(--card); border:1px solid var(--line); color:var(--fg); border-radius:8px; padding:4px 8px; font:inherit; cursor:pointer; }
 </style>
 </head>
 <body>
 <main>
 <header>
   <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28" style="vertical-align:-8px;margin-right:8px">Favorites Cleaner for TikTok</a>
-  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span></a><button type="button" data-l="en" aria-pressed="true">EN</button> <button type="button" data-l="fr" aria-pressed="false">FR</button></span>
+  <span class="lang"><a class="don" href="https://ko-fi.com/sortfold" target="_blank" rel="noopener"><span lang="en">☕ Donate</span><span lang="fr">☕ Faire un don</span><span lang="es">☕ Donar</span><span lang="de">☕ Spenden</span><span lang="pt">☕ Doar</span><span lang="it">☕ Dona</span></a><select id="lang-sel" aria-label="Language"><option value="en">EN</option><option value="fr">FR</option><option value="es">ES</option><option value="de">DE</option><option value="pt">PT</option><option value="it">IT</option></select></span>
 </header>
 
 <!-- ============ ENGLISH ============ -->
@@ -68,7 +69,7 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <h2>Good to know</h2>
 <ul>
   <li><b>Settings:</b> the <b>⚙ Settings</b> button at the top of the panel. Language, swipe direction and speed are there.</li>
-  <li><b>Language:</b> the panel follows the language of TikTok. Use the <b>EN / FR</b> button at the top right of the panel to switch.</li>
+  <li><b>Language:</b> the panel follows the language of TikTok. Use the <b>🌐</b> button at the top of the panel to switch (6 languages).</li>
   <li><b>Free plan:</b> 200 removals per day. <b>Pro:</b> unlimited, one-time payment, on the <a href="./">home page</a>. After buying, click <b>⭐ Go Pro</b> at the top of the panel and paste your key.</li>
   <li><b>Chrome may show a warning at startup</b> about extensions in developer mode. This is normal for a manual install: just close it.</li>
 </ul>
@@ -106,7 +107,7 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <h2>Bon à savoir</h2>
 <ul>
   <li><b>Réglages :</b> le bouton <b>⚙ Réglages</b> en haut du panneau. La langue, le sens des gestes et la vitesse y sont.</li>
-  <li><b>Langue :</b> le panneau suit la langue de TikTok. Le bouton <b>EN / FR</b> en haut à droite du panneau permet d'en changer.</li>
+  <li><b>Langue :</b> le panneau suit la langue de TikTok. Le bouton <b>🌐</b> en haut du panneau permet d'en changer (6 langues).</li>
   <li><b>Version gratuite :</b> 200 retraits par jour. <b>Pro :</b> illimité, paiement unique, sur la <a href="./">page d'accueil</a>. Après l'achat, clique sur <b>⭐ Passer en Pro</b> en haut du panneau et colle ta clé.</li>
   <li><b>Chrome peut afficher un avertissement au démarrage</b> sur les extensions en mode développeur. C'est normal pour une installation manuelle : ferme-le simplement.</li>
 </ul>
@@ -125,19 +126,155 @@ html[data-lang="en"] [lang="fr"], html[data-lang="fr"] [lang="en"] { display:non
 <p class="warn">Nettoyeur de favoris pour TikTok clique sur TikTok à ta place. Cela peut aller à l'encontre des conditions d'utilisation de TikTok : TikTok peut limiter, suspendre ou bannir un compte. Tu l'utilises à tes propres risques. Non affilié à TikTok.</p>
 </div>
 
+<!-- ============ ESPAÑOL ============ -->
+<div lang="es">
+<h1>Instalar Favorites Cleaner for TikTok</h1>
+<p class="lead">Funciona en ordenador con Chrome, Edge y Brave.</p>
+<div class="store"><p><b>Lo más fácil: un clic desde la Chrome Web Store.</b> Las actualizaciones son automáticas.</p><a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Añadir a Chrome – es gratis</a></div>
+<h2>O instálala a mano (unos 2 minutos)</h2>
+<p><a class="cta alt" href="favorites-sorter.zip" download>⬇ Descargar (.zip)</a></p>
+<ol class="steps">
+  <li><b>Descomprime el archivo descargado.</b><span>Clic derecho → <i>Extraer todo</i> (o <i>Extraer en «favorites-sorter/»</i> con 7-Zip o WinRAR). Deja la carpeta <code>favorites-sorter</code> en un sitio donde vaya a quedarse, por ejemplo en <i>Documentos</i>. No la borres después: el navegador ejecuta la extensión desde esa carpeta.</span></li>
+  <li><b>Abre la página de extensiones.</b><span>En la barra de direcciones de Chrome, escribe <code>chrome://extensions</code> y pulsa Intro. (Edge: <code>edge://extensions</code>.)</span></li>
+  <li><b>Activa el «Modo de desarrollador».</b><span>Es un interruptor arriba a la derecha de esa página.</span></li>
+  <li><b>Haz clic en «Cargar descomprimida»</b><span>Se abre una ventana: selecciona la carpeta <code>favorites-sorter</code> que acabas de descomprimir y haz clic en <i>Seleccionar carpeta</i>. La extensión aparece en tu lista.</span></li>
+  <li><b>Abre TikTok.</b><span>Ve a <code>tiktok.com</code> e inicia sesión. Aparece un botón rojo <b style="display:inline">⇄ Ordenar mis favoritos</b> abajo a la derecha (o haz clic en el icono de la extensión en la barra de herramientas). Haz clic y luego en <i>Importar desde mi perfil de TikTok</i>.</span></li>
+</ol>
+<h2>Bueno saber</h2>
+<ul>
+  <li><b>Ajustes:</b> el botón <b>⚙ Ajustes</b> arriba del panel: idioma, sentido de los gestos y velocidad.</li>
+  <li><b>Idioma:</b> el panel sigue el idioma de TikTok. El botón <b>🌐</b> arriba del panel permite cambiarlo (6 idiomas).</li>
+  <li><b>Versión gratuita:</b> 200 eliminaciones al día. <b>Pro:</b> ilimitado, pago único, en la <a href="./">página de inicio</a>. Tras la compra, haz clic en <b>⭐ Pasar a Pro</b> arriba del panel y pega tu clave.</li>
+  <li><b>Chrome puede mostrar un aviso al arrancar</b> sobre las extensiones en modo de desarrollador. Es normal en una instalación manual: ciérralo.</li>
+</ul>
+<h2>¿No funciona?</h2>
+<div class="faq">
+  <p><b>«Falta el archivo de manifiesto o no se puede leer»</b>Has elegido la carpeta equivocada. Selecciona la carpeta <code>favorites-sorter</code> misma (la que contiene <code>manifest.json</code>), no el .zip ni una carpeta que la rodee.</p>
+  <p><b>No veo el botón rojo en TikTok.</b>Recarga la página de TikTok (<kbd>F5</kbd>) y comprueba en <code>chrome://extensions</code> que la extensión está activada.</p>
+  <p><b>¿Cómo actualizo sin perder mi orden?</b>Descomprime el nuevo .zip <b>en la misma carpeta</b> (reemplaza los archivos), haz clic en la flecha ↻ de la extensión en <code>chrome://extensions</code> y recarga TikTok. Tus datos se conservan. <b>No</b> hagas clic en <i>Quitar</i> ni cargues otra carpeta: empezarías de cero.</p>
+  <p><b>¿Cómo la quito?</b>Antes, haz una copia de seguridad: pestaña <i>Actividad</i> → <b>Exportar mis datos</b>. Luego <i>Quitar</i> en <code>chrome://extensions</code>. Para recuperarlo, reinstala y usa <b>Restaurar una copia de seguridad</b>.</p>
+  <p><b>¿Sigues atascado?</b>Escribe a <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> contando qué hiciste y qué viste.</p>
+</div>
+<p class="warn">La extensión hace clics en TikTok por ti. Esto puede ir en contra de las condiciones de uso de TikTok: TikTok puede limitar, suspender o bloquear una cuenta. Úsala bajo tu propia responsabilidad. No afiliada a TikTok.</p>
+</div>
+
+<!-- ============ DEUTSCH ============ -->
+<div lang="de">
+<h1>Favorites Cleaner for TikTok installieren</h1>
+<p class="lead">Funktioniert am Computer mit Chrome, Edge und Brave.</p>
+<div class="store"><p><b>Am einfachsten: ein Klick im Chrome Web Store.</b> Updates kommen automatisch.</p><a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Zu Chrome hinzufügen – kostenlos</a></div>
+<h2>Oder von Hand installieren (etwa 2 Minuten)</h2>
+<p><a class="cta alt" href="favorites-sorter.zip" download>⬇ Herunterladen (.zip)</a></p>
+<ol class="steps">
+  <li><b>Entpacke die heruntergeladene Datei.</b><span>Rechtsklick → <i>Alle extrahieren</i> (oder <i>Entpacken nach „favorites-sorter/“</i> mit 7-Zip oder WinRAR). Leg den Ordner <code>favorites-sorter</code> an einen festen Ort, zum Beispiel in <i>Dokumente</i>. Lösch ihn später nicht: Der Browser führt die Erweiterung aus diesem Ordner aus.</span></li>
+  <li><b>Öffne die Erweiterungsseite.</b><span>Gib in die Adressleiste von Chrome <code>chrome://extensions</code> ein und drück Enter. (Edge: <code>edge://extensions</code>.)</span></li>
+  <li><b>Schalte den „Entwicklermodus“ ein.</b><span>Das ist ein Schalter oben rechts auf dieser Seite.</span></li>
+  <li><b>Klick auf „Entpackte Erweiterung laden“</b><span>Ein Fenster öffnet sich: Wähl den gerade entpackten Ordner <code>favorites-sorter</code> und klick auf <i>Ordner auswählen</i>. Die Erweiterung erscheint in deiner Liste.</span></li>
+  <li><b>Öffne TikTok.</b><span>Geh auf <code>tiktok.com</code> und melde dich an. Unten rechts erscheint ein roter Knopf <b style="display:inline">⇄ Favoriten sortieren</b> (oder klick auf das Symbol der Erweiterung in der Symbolleiste). Klick darauf, dann auf <i>Aus meinem TikTok-Profil importieren</i>.</span></li>
+</ol>
+<h2>Gut zu wissen</h2>
+<ul>
+  <li><b>Einstellungen:</b> der Knopf <b>⚙ Einstellungen</b> oben im Panel: Sprache, Wischrichtung und Tempo.</li>
+  <li><b>Sprache:</b> Das Panel folgt der Sprache von TikTok. Mit dem Knopf <b>🌐</b> oben im Panel wechselst du sie (6 Sprachen).</li>
+  <li><b>Kostenlos:</b> 200 Entfernungen pro Tag. <b>Pro:</b> unbegrenzt, einmalige Zahlung, auf der <a href="./">Startseite</a>. Klick nach dem Kauf oben im Panel auf <b>⭐ Pro holen</b> und füg deinen Schlüssel ein.</li>
+  <li><b>Chrome zeigt beim Start eventuell eine Warnung</b> zu Erweiterungen im Entwicklermodus. Bei einer manuellen Installation ist das normal: einfach schließen.</li>
+</ul>
+<h2>Es klappt nicht?</h2>
+<div class="faq">
+  <p><b>„Manifestdatei fehlt oder ist nicht lesbar“</b>Du hast den falschen Ordner gewählt. Wähl den Ordner <code>favorites-sorter</code> selbst (der mit <code>manifest.json</code> darin), nicht die .zip-Datei und keinen Ordner darum herum.</p>
+  <p><b>Ich sehe den roten Knopf auf TikTok nicht.</b>Lade die TikTok-Seite neu (<kbd>F5</kbd>) und prüf in <code>chrome://extensions</code>, ob die Erweiterung eingeschaltet ist.</p>
+  <p><b>Wie aktualisiere ich, ohne meine Sortierung zu verlieren?</b>Entpack die neue .zip <b>in denselben Ordner</b> (Dateien ersetzen), klick in <code>chrome://extensions</code> auf den runden Pfeil ↻ der Erweiterung und lade TikTok neu. Deine Daten bleiben erhalten. Klick <b>nicht</b> auf <i>Entfernen</i> und lade keinen anderen Ordner: Dann fängst du bei null an.</p>
+  <p><b>Wie entferne ich sie?</b>Mach zuerst eine Sicherung: Tab <i>Aktivität</i> → <b>Meine Daten exportieren</b>. Dann <i>Entfernen</i> in <code>chrome://extensions</code>. Um sie zurückzuholen, neu installieren und <b>Sicherung wiederherstellen</b> nutzen.</p>
+  <p><b>Immer noch Probleme?</b>Schreib an <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a>, was du gemacht und was du gesehen hast.</p>
+</div>
+<p class="warn">Die Erweiterung klickt für dich auf TikTok. Das kann gegen die Nutzungsbedingungen von TikTok verstoßen: TikTok kann ein Konto einschränken, sperren oder bannen. Nutzung auf eigenes Risiko. Nicht mit TikTok verbunden.</p>
+</div>
+
+<!-- ============ PORTUGUÊS ============ -->
+<div lang="pt">
+<h1>Instalar o Favorites Cleaner for TikTok</h1>
+<p class="lead">Funciona no computador com Chrome, Edge e Brave.</p>
+<div class="store"><p><b>O mais fácil: um clique na Chrome Web Store.</b> As atualizações são automáticas.</p><a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Adicionar ao Chrome – é grátis</a></div>
+<h2>Ou instale à mão (cerca de 2 minutos)</h2>
+<p><a class="cta alt" href="favorites-sorter.zip" download>⬇ Baixar (.zip)</a></p>
+<ol class="steps">
+  <li><b>Descompacte o arquivo baixado.</b><span>Clique com o botão direito → <i>Extrair tudo</i> (ou <i>Extrair para "favorites-sorter/"</i> com 7-Zip ou WinRAR). Coloque a pasta <code>favorites-sorter</code> num lugar onde ela vai ficar, por exemplo em <i>Documentos</i>. Não apague depois: o navegador roda a extensão a partir dessa pasta.</span></li>
+  <li><b>Abra a página de extensões.</b><span>Na barra de endereço do Chrome, digite <code>chrome://extensions</code> e aperte Enter. (Edge: <code>edge://extensions</code>.)</span></li>
+  <li><b>Ative o "Modo do desenvolvedor".</b><span>É um botão no canto superior direito dessa página.</span></li>
+  <li><b>Clique em "Carregar sem compactação"</b><span>Uma janela abre: selecione a pasta <code>favorites-sorter</code> que você acabou de descompactar e clique em <i>Selecionar pasta</i>. A extensão aparece na sua lista.</span></li>
+  <li><b>Abra o TikTok.</b><span>Acesse <code>tiktok.com</code> e entre na sua conta. Um botão vermelho <b style="display:inline">⇄ Organizar meus favoritos</b> aparece no canto inferior direito (ou clique no ícone da extensão na barra de ferramentas). Clique nele e depois em <i>Importar do meu perfil do TikTok</i>.</span></li>
+</ol>
+<h2>Bom saber</h2>
+<ul>
+  <li><b>Configurações:</b> o botão <b>⚙ Configurações</b> no topo do painel: idioma, direção dos gestos e velocidade.</li>
+  <li><b>Idioma:</b> o painel segue o idioma do TikTok. O botão <b>🌐</b> no topo do painel permite trocar (6 idiomas).</li>
+  <li><b>Versão grátis:</b> 200 remoções por dia. <b>Pro:</b> ilimitado, pagamento único, na <a href="./">página inicial</a>. Depois da compra, clique em <b>⭐ Obter o Pro</b> no topo do painel e cole sua chave.</li>
+  <li><b>O Chrome pode mostrar um aviso ao iniciar</b> sobre extensões no modo do desenvolvedor. É normal numa instalação manual: é só fechar.</li>
+</ul>
+<h2>Não funciona?</h2>
+<div class="faq">
+  <p><b>"O arquivo de manifesto está ausente ou ilegível"</b>Você escolheu a pasta errada. Selecione a própria pasta <code>favorites-sorter</code> (a que tem <code>manifest.json</code> dentro), não o .zip nem uma pasta em volta.</p>
+  <p><b>Não vejo o botão vermelho no TikTok.</b>Recarregue a página do TikTok (<kbd>F5</kbd>) e confira em <code>chrome://extensions</code> se a extensão está ativada.</p>
+  <p><b>Como atualizo sem perder minha organização?</b>Descompacte o novo .zip <b>na mesma pasta</b> (substitua os arquivos), clique na seta ↻ da extensão em <code>chrome://extensions</code> e recarregue o TikTok. Seus dados são mantidos. <b>Não</b> clique em <i>Remover</i> nem carregue outra pasta: isso começa do zero.</p>
+  <p><b>Como removo?</b>Primeiro faça um backup: aba <i>Atividade</i> → <b>Exportar meus dados</b>. Depois <i>Remover</i> em <code>chrome://extensions</code>. Para recuperar, reinstale e use <b>Restaurar um backup</b>.</p>
+  <p><b>Ainda com problema?</b>Escreva para <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> contando o que fez e o que viu.</p>
+</div>
+<p class="warn">A extensão clica no TikTok por você. Isso pode ir contra os termos de uso do TikTok: o TikTok pode limitar, suspender ou banir uma conta. Use por sua conta e risco. Sem vínculo com o TikTok.</p>
+</div>
+
+<!-- ============ ITALIANO ============ -->
+<div lang="it">
+<h1>Installare Favorites Cleaner for TikTok</h1>
+<p class="lead">Funziona sul computer con Chrome, Edge e Brave.</p>
+<div class="store"><p><b>Il modo più facile: un clic dal Chrome Web Store.</b> Gli aggiornamenti sono automatici.</p><a class="cta" href="https://chromewebstore.google.com/detail/bbmlmfpeooahhpfhbhkomjflifibodpl">＋ Aggiungi a Chrome – è gratis</a></div>
+<h2>Oppure installala a mano (circa 2 minuti)</h2>
+<p><a class="cta alt" href="favorites-sorter.zip" download>⬇ Scarica (.zip)</a></p>
+<ol class="steps">
+  <li><b>Estrai il file scaricato.</b><span>Clic destro → <i>Estrai tutto</i> (o <i>Estrai in «favorites-sorter/»</i> con 7-Zip o WinRAR). Metti la cartella <code>favorites-sorter</code> in un posto dove resterà, per esempio in <i>Documenti</i>. Non cancellarla dopo: il browser esegue l'estensione da quella cartella.</span></li>
+  <li><b>Apri la pagina delle estensioni.</b><span>Nella barra degli indirizzi di Chrome scrivi <code>chrome://extensions</code> e premi Invio. (Edge: <code>edge://extensions</code>.)</span></li>
+  <li><b>Attiva la «Modalità sviluppatore».</b><span>È un interruttore in alto a destra di quella pagina.</span></li>
+  <li><b>Clicca su «Carica estensione non pacchettizzata»</b><span>Si apre una finestra: seleziona la cartella <code>favorites-sorter</code> appena estratta e clicca su <i>Seleziona cartella</i>. L'estensione compare nel tuo elenco.</span></li>
+  <li><b>Apri TikTok.</b><span>Vai su <code>tiktok.com</code> e accedi. In basso a destra compare un pulsante rosso <b style="display:inline">⇄ Ordina i miei preferiti</b> (oppure clicca sull'icona dell'estensione nella barra degli strumenti). Cliccalo, poi su <i>Importa dal mio profilo TikTok</i>.</span></li>
+</ol>
+<h2>Da sapere</h2>
+<ul>
+  <li><b>Impostazioni:</b> il pulsante <b>⚙ Impostazioni</b> in alto nel pannello: lingua, direzione dei gesti e velocità.</li>
+  <li><b>Lingua:</b> il pannello segue la lingua di TikTok. Il pulsante <b>🌐</b> in alto nel pannello permette di cambiarla (6 lingue).</li>
+  <li><b>Versione gratuita:</b> 200 rimozioni al giorno. <b>Pro:</b> illimitato, pagamento unico, nella <a href="./">pagina iniziale</a>. Dopo l'acquisto, clicca su <b>⭐ Passa a Pro</b> in alto nel pannello e incolla la chiave.</li>
+  <li><b>Chrome può mostrare un avviso all'avvio</b> sulle estensioni in modalità sviluppatore. È normale per un'installazione manuale: chiudilo.</li>
+</ul>
+<h2>Non funziona?</h2>
+<div class="faq">
+  <p><b>«File manifest mancante o illeggibile»</b>Hai scelto la cartella sbagliata. Seleziona la cartella <code>favorites-sorter</code> stessa (quella che contiene <code>manifest.json</code>), non il .zip né una cartella che la contiene.</p>
+  <p><b>Non vedo il pulsante rosso su TikTok.</b>Ricarica la pagina di TikTok (<kbd>F5</kbd>) e controlla in <code>chrome://extensions</code> che l'estensione sia attiva.</p>
+  <p><b>Come aggiorno senza perdere il mio ordinamento?</b>Estrai il nuovo .zip <b>nella stessa cartella</b> (sostituisci i file), clicca sulla freccia ↻ dell'estensione in <code>chrome://extensions</code> e ricarica TikTok. I dati restano. <b>Non</b> cliccare su <i>Rimuovi</i> e non caricare un'altra cartella: si ripartirebbe da zero.</p>
+  <p><b>Come la rimuovo?</b>Prima fai un backup: scheda <i>Attività</i> → <b>Esporta i miei dati</b>. Poi <i>Rimuovi</i> in <code>chrome://extensions</code>. Per recuperarlo, reinstalla e usa <b>Ripristina un backup</b>.</p>
+  <p><b>Ancora bloccato?</b>Scrivi a <a href="mailto:sortfold@gmail.com">sortfold@gmail.com</a> spiegando cosa hai fatto e cosa hai visto.</p>
+</div>
+<p class="warn">L'estensione clicca su TikTok al posto tuo. Questo può andare contro i termini d'uso di TikTok: TikTok può limitare, sospendere o bannare un account. Uso a tuo rischio. Non affiliata a TikTok.</p>
+</div>
+
 <footer>© 2026 Sortfold</footer>
 </main>
 <script>
 (function () {
-  var root = document.documentElement, btns = document.querySelectorAll('.lang button');
+  var LANGS = ['en', 'fr', 'es', 'de', 'pt', 'it'];
+  var root = document.documentElement, sel = document.getElementById('lang-sel');
   function set(l) {
     root.setAttribute('data-lang', l); root.lang = l;
-    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    if (sel) sel.value = l;
     try { localStorage.setItem('lang', l); } catch (e) {}
   }
   var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
-  set(saved || ((navigator.language || 'en').slice(0, 2) === 'fr' ? 'fr' : 'en'));
-  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l); }); });
+  var hash = location.hash.slice(-2), nav = (navigator.language || 'en').slice(0, 2);
+  set(LANGS.indexOf(hash) >= 0 ? hash : LANGS.indexOf(saved) >= 0 ? saved : LANGS.indexOf(nav) >= 0 ? nav : 'en');
+  if (sel) sel.addEventListener('change', function () { set(sel.value); });
+  function openPriv() {
+    var d = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); }
+  }
+  openPriv();
+  window.addEventListener('hashchange', openPriv);
 })();
 </script>
 </body>
