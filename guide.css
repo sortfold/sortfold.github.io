@@ -19,6 +19,7 @@ ol.steps { padding-left:22px; } ol.steps li { margin:8px 0; }
 .cta { display:inline-block; background:linear-gradient(135deg,#ff2d75,#8a4dff); color:#fff; padding:13px 24px; border-radius:12px; text-decoration:none; font-weight:800; margin:10px 10px 8px 0; box-shadow:0 8px 24px #ff2d7544; }
 .cta.alt { background:none; color:var(--fg); border:2px solid var(--acc); box-shadow:none; font-weight:700; }
 .hero { width:100%; height:auto; border-radius:14px; border:1px solid var(--line); margin:16px 0 6px; display:block; }
+.video { width:100%; aspect-ratio:16/9; border:0; border-radius:14px; margin:6px 0 12px; display:block; background:#000; }
 .cap { color:var(--mute); font-size:.9rem; margin:0 0 10px; }
 .faq h3 { margin-top:22px; }
 .faq p { margin:4px 0 0; }
